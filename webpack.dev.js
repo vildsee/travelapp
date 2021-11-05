@@ -1,20 +1,33 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
     entry: './src/client/index.js',
+    mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
+    target: 'node',
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
+        // historyApiFallback: true,
+        static: path.resolve(__dirname, './dist'),
+        open: true,
         compress: true,
+        // hot: true,
         port: 6060
+        
     },
+    // resolve: {
+    //     fallback: {
+    //       util: require.resolve("util/")
+    //     }
+    // },
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+        // filename: '[name].bundle.js',
+        // path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     module: {
         rules: [
@@ -30,7 +43,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader']
+                use: [ 'style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif|ico)$/i,
@@ -50,6 +63,10 @@ module.exports = {
         ]
     },
     plugins: [
-        
+        new HtmlWebPackPlugin({
+            template: "./src/client/views/index.html",
+            filename: "./index.html"
+        }),
+        new webpack.HotModuleReplacementPlugin(),
     ]
 }
