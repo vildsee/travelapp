@@ -2,21 +2,89 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Around the World travel app</title>
+        <title>Around the World travel planner</title>
     </head>
 
     <body>
 
         <header>
-            <h1>Around the World Travel app</h1>
+            <h1>Around the World travel planner</h1>
         </header>
 
         <main>
-            <p></p>
+
+            <section class="bar">
+                <div id="addTrip">
+                    <input type="button" class="btn" id="addTripBtn" value="+ Add trip">
+                </div>
+                <div id="date"></div>
+            </section>
+
+            <section class="tripInfo">
+                <form class="" onsubmit="return Client.performAction(event)">
+                    <div id="tripStart">
+                        <label for="startDate">Start date:</label>
+                        <input type="date" id="startDate">
+                        <label for="endDate">End date:</label>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div id="tripLocation">
+                        <input type="text" id="inputLocation" placeholder="Enter your destination">
+                    </div>
+                    <div id="addLocations">
+                        <input type="button" class="btn" id="addLocationBtn" value="+ Add more destinations">
+                    </div>
+                    <div id="formsubmit">
+                        <input type="submit" class="sbm" id="submitTrip" value="Submit" onclick="return Client.performAction(event)" onsubmit="return Client.performAction(event)">
+                    </div>
+                </form>
+            </section>
+
+            <div class="infos">
+
+            <section class="extraInfo">
+                <div id="hotel">
+                    <input type="button" class="btn" id="hotelBtn" value="+ Add hotel">
+                    <div id="hotelInfo"></div>
+                </div>
+                <div id="flight">
+                    <input type="button" class="btn" id="flightBtn" value="+ Add flight">
+                    <div id="flightInfo"></div>
+                </div>
+                <div id="packing">
+                    <input type="button" class="btn" id="packingBtn" value="+ Make a packing list">
+                    <div id="packingList"></div>
+                </div>
+                <div id="toDo">
+                    <input type="button" class="btn" id="toDoBtn" value="+ Make a To Do list">
+                    <div id="toDoList"></div>
+                </div>
+            </section>
+
+            <section class="displayData">
+                <div id="destination"></div>
+                <div id="weather"></div>
+                <div id="countryData"></div>
+            </section>
+
+            </div>
+            <section class="oldTrips">
+
+            </section>
+
         </main>
 
         <footer>
-
+            <hr>
+            <div id="footsie">
+                <div id="usedData">
+                    <p>Used APIs:</p>
+                    <a href="https://www.geonames.org">GeoNames</a>
+                </div>
+                <div id="copyright">
+                    <p>Copyright (c) 2021 Vildsee♡</p>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

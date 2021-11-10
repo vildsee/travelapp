@@ -1,25 +1,25 @@
 /* Global Variables */
-const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const metric = '&units=metric';
-const apiKey = '&appid=766858b1c912d1cf5ec5fc306bb7427d';
+const baseURL = 'http://api.geonames.org/search?q=';
+const username = 'vildsee';
 
 // Create a new date instance dynamically with JS
 let day = new Date();
-let newDate = (day.getMonth() + 1) +'/'+ day.getDate()+'/'+ day.getFullYear();
+let newDate = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
+document.getElementById('date').innerHTML = newDate;
 
 //Eventlistener for id=generate
-document.querySelector('#generate').addEventListener('click', performAction);
+// document.querySelector('#submitTrip').addEventListener('click', performAction);
 
 //Event
-function performAction(e) {
-    const zip = document.getElementById('zip').value;
-    const feelings = document.getElementById('feelings');
-    getWeather(baseURL, zip, apiKey)
+function performAction(event) {
+    event.preventDefault();
+    const city = document.getElementById('inputLocation').value;
+    getCoordinates(baseURL, city, username)
     .then((data) => {
         postData('/all', {
-            temp: data.main.temp,
-            feelings: feelings.value,
-            date: newDate
+            lat: res.data.geonames[0].lat,
+            lng: res.data.geonames[0].lng,
+            countryName: res.data.geonames[0].countryName
         })
     })
     .then(() => getData('/all'))
@@ -27,14 +27,14 @@ function performAction(e) {
 }
 
 //Request to OpenWeatherMap API
-const getWeather = async(baseURL, zip, apiKey) => {
-    const res = await fetch(baseURL+zip+metric+apiKey)
+const getCoordinates = async(baseURL, city, username) => {
+    const res = await fetch(baseURL+city+'&maxRows=1&username='+username)
     try {
         const data = await res.json();
         console.log(data);
         return data;
     } catch(error) {
-        console.log('error getweather');
+        console.log('error getCoordinates');
     }
 };
 

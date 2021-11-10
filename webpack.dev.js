@@ -7,7 +7,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
-    target: 'node',
+    target: 'web',
     devServer: {
         // historyApiFallback: true,
         static: path.resolve(__dirname, './dist'),

@@ -1,7 +1,55 @@
 body {
-    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: beige;
+    max-width: 700px;
 }
 
-h1 {
-    color: green;
+.infos {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "info display";
+}
+
+.btn,
+.sbm {
+    cursor: pointer;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.tripInfo {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.extraInfo {
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.displayData {
+    margin-top: 10px;
+}
+
+.oldTrips {
+    margin-top: 10px;
 }

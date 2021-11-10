@@ -32,9 +32,9 @@ app.get('/all', (req, res) => {
 app.post('/all', (req, res) => {
     console.log(req.body)
     let newEntry = {
-        date: req.body.date,
-        temp: req.body.temp,
-        feelings: req.body.feelings
+        lat: req.body.lat,
+        lng: req.body.lng,
+        countryName: req.body.countryName
     }
     projectData=newEntry;
     res.send(projectData)
