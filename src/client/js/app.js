@@ -8,7 +8,7 @@ let newDate = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYe
 document.getElementById('date').innerHTML = newDate;
 
 //Eventlistener for id=generate
-// document.querySelector('#submitTrip').addEventListener('click', performAction);
+document.querySelector('#submitTrip').addEventListener('click', performAction);
 
 //Event
 function performAction(event) {

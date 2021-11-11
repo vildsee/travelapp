@@ -1,4 +1,4 @@
 dist
 media
-node-modules
+node_modules
 .env
