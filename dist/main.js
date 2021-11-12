@@ -1082,19 +1082,19 @@ function performAction(event) {
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
         const res = await
-        postData('/all', {
+        postData('/add', {
             city: city,
             lat: geodata.geonames[0].lat,
             lng: geodata.geonames[0].lng,
-            countriName: geodata.geonames[0].countryName
+            countryName: geodata.geonames[0].countryName
 
         })
         getWeather(geodata.lat, geodata.lng)
             .then(async (weatherData) => {
                 const res = await
-                postData('/all', {
-                    'temp': weatherData.data.temp,
-                    'description': weatherData.description  
+                postData('/add', {
+                    temp: weatherData.data.temp,
+                    description: weatherData.description  
                 })
             })
     })
@@ -1142,16 +1142,16 @@ const postData = async (url = '', data = {}) => {
 };
 
 //Async GET
-// const getData = async (url='') => {
-//     const req = await fetch(url);
-//     try {
-//         let allData = await req.json()
-//         console.log(allData);
-//         return allData;
-//     } catch(error) {
-//         console.log('error async get', error);
-//     }
-// };
+const getData = async (url='') => {
+    const req = await fetch(url);
+    try {
+        let geodata = await req.json()
+        console.log(geodata);
+        return geodata;
+    } catch(error) {
+        console.log('error async get', error);
+    }
+};
 
 //Request to Weatherbit
 const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
@@ -1270,7 +1270,7 @@ const updateUI = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("52bad643f87343fbb631")
+/******/ 		__webpack_require__.h = () => ("1506437967f7971e15b6")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
