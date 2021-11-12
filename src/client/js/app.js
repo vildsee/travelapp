@@ -1,6 +1,15 @@
-/* Global Variables */
-const baseURL = 'http://api.geonames.org/search?q=';
-const username = 'vildsee';
+
+
+/* GeoNames API Variables */
+const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
+const username = '&username=vildsee';
+
+/* Weatherbit API Variables */
+const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily';
+const weatherKey = `&key=${process.env.WEATHERBIT_API_KEY}`;
+
+/* Pixabay API Variables */
+
 
 // Create a new date instance dynamically with JS
 let day = new Date();
@@ -14,32 +23,50 @@ document.querySelector('#submitTrip').addEventListener('click', performAction);
 function performAction(event) {
     event.preventDefault();
     const city = document.getElementById('inputLocation').value;
-    getCoordinates(baseURL, city, username)
-    .then((data) => {
-        postData('/all', {
-            lat: res.data.geonames[0].lat,
-            lng: res.data.geonames[0].lng,
-            countryName: res.data.geonames[0].countryName
+    getCoordinates(geoBaseUrl, city, username)
+    .then(async (geodata) => {
+        const res = await
+        postData('/add', {
+            city: city,
+            lat: geodata.geonames[0].lat,
+            lng: geodata.geonames[0].lng,
+            countryName: geodata.geonames[0].countryName
+
         })
+        getWeather(geodata.lat, geodata.lng)
+            .then(async (weatherData) => {
+                const res = await
+                postData('/add', {
+                    temp: weatherData.data.temp,
+                    description: weatherData.description  
+                })
+            })
     })
-    .then(() => getData('/all'))
+    
+    
+        
+    
     .then(() => updateUI());
 }
 
-//Request to OpenWeatherMap API
-const getCoordinates = async(baseURL, city, username) => {
-    const res = await fetch(baseURL+city+'&maxRows=1&username='+username)
+//Request to GeoNames API
+const getCoordinates = async(geoBaseUrl, city, username) => {
+    const res = await fetch(geoBaseUrl+city+'&maxRows=1'+username)
+    console.log('url', res)
     try {
-        const data = await res.json();
-        console.log(data);
-        return data;
+        const geodata = await res.json();
+        console.log(geodata.geonames[0])
+        console.log(`Lat: ${geodata.geonames[0].lat}`)
+        console.log(`Lng: ${geodata.geonames[0].lng}`)
+        console.log(`CountryName: ${geodata.geonames[0].countryName}`)
+        return geodata
     } catch(error) {
         console.log('error getCoordinates');
     }
 };
 
 //Async POST
-const postData = async (url, data) => {
+const postData = async (url = '', data = {}) => {
     const res = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -47,8 +74,9 @@ const postData = async (url, data) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    });
-
+    })
+        console.log(res, 'res')
+        console.log(res.body, 'res body')
     try {
         const newData = await res.json();
         return newData;
@@ -61,23 +89,39 @@ const postData = async (url, data) => {
 const getData = async (url='') => {
     const req = await fetch(url);
     try {
-        let allData = await req.json()
-        console.log(allData);
-        return allData;
+        let geodata = await req.json()
+        console.log(geodata);
+        return geodata;
     } catch(error) {
         console.log('error async get', error);
     }
 };
+
+//Request to Weatherbit
+const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
+    const res = await fetch(weatherBaseUrl + '&lat=' + lat + '&lon=' + lng + weatherKey)
+    console.log('url', res)
+    try {
+        const weatherData = await res.json();
+        console.log(weatherData)
+        return {
+            temp: weatherData.data[0].temp,
+            description: weatherData.data[0].weather.description
+        }
+    } catch(error) {
+        console.log('error req to weatherbit', error)
+    }
+}
 
 //Update UI
 const updateUI = async () => {
     const req = await fetch('/all');
     try {
         const allData = await req.json();
-        
-        document.getElementById('date').innerHTML = `Date: ${newDate}`;
-        document.getElementById('temp').innerHTML = `Temperature: ${allData.temp}°C`;
-        document.getElementById('content').innerHTML = `Feeling: ${feelings.value}`;
+
+        document.getElementById('destination').innerHTML = `${performAction.city}, ${projectData.geodata.countryName}`;
+        document.getElementById('weather').innerHTML = `Temperature: ${projectData.weatherData.temp}`;
+        document.getElementById('countryData').innerHTML = ``;
     }catch(error){
         console.log('error UI', error);
     }

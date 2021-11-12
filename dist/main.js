@@ -49,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "footer #footsie {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  font-size: 0.75em;\n}\nfooter hr {\n  width: 75%;\n}\nfooter a {\n  text-decoration: none;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/footer.scss"],"names":[],"mappings":"AAEI;EACA,aAAA;EACA,8BAAA;EACA,WAAA;EACA,iBAAA;AADJ;AAII;EACI,UAAA;AAFR;AAKI;EACI,qBAAA;AAHR","sourcesContent":["footer {\r\n\r\n    #footsie {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    font-size: 0.75em;\r\n    }\r\n\r\n    hr {\r\n        width: 75%;\r\n    }\r\n\r\n    a {\r\n        text-decoration: none;\r\n    }\r\n\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "footer #footsie {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  font-size: 0.75em;\n}\nfooter hr {\n  width: 75%;\n}\nfooter a {\n  text-decoration: none;\n}\nfooter img {\n  max-width: 50px;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/footer.scss"],"names":[],"mappings":"AAEI;EACA,aAAA;EACA,8BAAA;EACA,WAAA;EACA,iBAAA;AADJ;AAII;EACI,UAAA;AAFR;AAKI;EACI,qBAAA;AAHR;AAMI;EACI,eAAA;AAJR","sourcesContent":["footer {\r\n\r\n    #footsie {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    font-size: 0.75em;\r\n    }\r\n\r\n    hr {\r\n        width: 75%;\r\n    }\r\n\r\n    a {\r\n        text-decoration: none;\r\n    }\r\n\r\n    img {\r\n        max-width: 50px;\r\n    }\r\n\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1054,9 +1054,18 @@ __webpack_require__.r(__webpack_exports__);
   \******************************/
 /***/ (() => {
 
-/* Global Variables */
-const baseURL = 'http://api.geonames.org/search?q=';
-const username = 'vildsee';
+
+
+/* GeoNames API Variables */
+const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
+const username = '&username=vildsee';
+
+/* Weatherbit API Variables */
+const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily';
+const weatherKey = `&key=${"1a77645c2dca40088908444918bacbb7"}`;
+
+/* Pixabay API Variables */
+
 
 // Create a new date instance dynamically with JS
 let day = new Date();
@@ -1070,32 +1079,50 @@ document.querySelector('#submitTrip').addEventListener('click', performAction);
 function performAction(event) {
     event.preventDefault();
     const city = document.getElementById('inputLocation').value;
-    getCoordinates(baseURL, city, username)
-    .then((data) => {
+    getCoordinates(geoBaseUrl, city, username)
+    .then(async (geodata) => {
+        const res = await
         postData('/all', {
-            lat: res.data.geonames[0].lat,
-            lng: res.data.geonames[0].lng,
-            countryName: res.data.geonames[0].countryName
+            city: city,
+            lat: geodata.geonames[0].lat,
+            lng: geodata.geonames[0].lng,
+            countriName: geodata.geonames[0].countryName
+
         })
+        getWeather(geodata.lat, geodata.lng)
+            .then(async (weatherData) => {
+                const res = await
+                postData('/all', {
+                    'temp': weatherData.data.temp,
+                    'description': weatherData.description  
+                })
+            })
     })
-    .then(() => getData('/all'))
+    
+    
+        
+    
     .then(() => updateUI());
 }
 
-//Request to OpenWeatherMap API
-const getCoordinates = async(baseURL, city, username) => {
-    const res = await fetch(baseURL+city+'&maxRows=1&username='+username)
+//Request to GeoNames API
+const getCoordinates = async(geoBaseUrl, city, username) => {
+    const res = await fetch(geoBaseUrl+city+'&maxRows=1'+username)
+    console.log('url', res)
     try {
-        const data = await res.json();
-        console.log(data);
-        return data;
+        const geodata = await res.json();
+        console.log(geodata.geonames[0])
+        console.log(`Lat: ${geodata.geonames[0].lat}`)
+        console.log(`Lng: ${geodata.geonames[0].lng}`)
+        console.log(`CountryName: ${geodata.geonames[0].countryName}`)
+        return geodata
     } catch(error) {
         console.log('error getCoordinates');
     }
 };
 
 //Async POST
-const postData = async (url, data) => {
+const postData = async (url = '', data = {}) => {
     const res = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -1103,8 +1130,9 @@ const postData = async (url, data) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    });
-
+    })
+        console.log(res, 'res')
+        console.log(res.body, 'res body')
     try {
         const newData = await res.json();
         return newData;
@@ -1114,26 +1142,42 @@ const postData = async (url, data) => {
 };
 
 //Async GET
-const getData = async (url='') => {
-    const req = await fetch(url);
+// const getData = async (url='') => {
+//     const req = await fetch(url);
+//     try {
+//         let allData = await req.json()
+//         console.log(allData);
+//         return allData;
+//     } catch(error) {
+//         console.log('error async get', error);
+//     }
+// };
+
+//Request to Weatherbit
+const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
+    const res = await fetch(weatherBaseUrl + '&lat=' + lat + '&lon=' + lng + weatherKey)
+    console.log('url', res)
     try {
-        let allData = await req.json()
-        console.log(allData);
-        return allData;
+        const weatherData = await res.json();
+        console.log(weatherData)
+        return {
+            temp: weatherData.data[0].temp,
+            description: weatherData.data[0].weather.description
+        }
     } catch(error) {
-        console.log('error async get', error);
+        console.log('error req to weatherbit', error)
     }
-};
+}
 
 //Update UI
 const updateUI = async () => {
     const req = await fetch('/all');
     try {
         const allData = await req.json();
-        
-        document.getElementById('date').innerHTML = `Date: ${newDate}`;
-        document.getElementById('temp').innerHTML = `Temperature: ${allData.temp}°C`;
-        document.getElementById('content').innerHTML = `Feeling: ${feelings.value}`;
+
+        document.getElementById('destination').innerHTML = `${performAction.city}, ${projectData.geodata.countryName}`;
+        document.getElementById('weather').innerHTML = `Temperature: ${projectData.weatherData.temp}`;
+        document.getElementById('countryData').innerHTML = ``;
     }catch(error){
         console.log('error UI', error);
     }
@@ -1226,7 +1270,7 @@ const updateUI = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e7ab44d23fa6b438796d")
+/******/ 		__webpack_require__.h = () => ("52bad643f87343fbb631")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

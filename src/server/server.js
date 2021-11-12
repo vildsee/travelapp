@@ -1,18 +1,15 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
-// Require Express to run server and routes
+
 const express = require('express');
-// Start up an instance of app
 const app = express();
-/* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
 const bodyParser = require('body-parser');
-
-// Cors for cross origin allowance
 const cors = require('cors');
+const dotenv = require('dotenv')
+dotenv.config()
+
 app.use(cors());
-// Initialize the main project folder
 app.use(express.static('dist'));
 console.log(__dirname)
 
@@ -25,17 +22,36 @@ const server = app.listen(port, () => {
 //Get route
 app.get('/all', (req, res) => {
     res.send(projectData);
-    console.log('app get');
+    console.log(projectData, 'projectData posted');
 });
 
 //Post route
-app.post('/all', (req, res) => {
-    console.log(req.body)
-    let newEntry = {
-        lat: req.body.lat,
-        lng: req.body.lng,
-        countryName: req.body.countryName
-    }
-    projectData=newEntry;
+app.post('/add', (req, res) => {
+    let geodata = req.body;
+    projectData["lat"] = geodata.lat;
+    projectData["lng"] = geodata.lng;
+    projectData["countryName"] = geodata.countryName;
     res.send(projectData)
-});
+    console.log("geo add")
+
+})
+
+// app.post('/add', (req, res) => {
+//     console.log(req.body)
+//     let geodata = {
+//         lat: req.body.lat,
+//         lng: req.body.lng,
+//         countryName: req.body.countryName
+//     }
+//     projectData.geodata = geodata;
+//     console.log(geodata, 'geodata')
+
+//     let weatherData = {
+//         temp: req.body.temp,
+//         description: req.body.description
+//     }
+//     projectData.weatherData = weatherData
+//     console.log(weatherData, 'weatherdata')
+
+//     res.send(projectData);
+// });
