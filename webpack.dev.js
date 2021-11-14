@@ -15,8 +15,10 @@ module.exports = {
         open: true,
         compress: true,
         // hot: true,
-        port: 6060
-        
+        // port: 6060,
+        proxy: {
+            '/api': 'http://localhost:3000',
+        },
     },
     // resolve: {
     //     fallback: {

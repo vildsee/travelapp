@@ -20,13 +20,13 @@ const server = app.listen(port, () => {
 });
 
 //Get route
-app.get('/all', (req, res) => {
+app.get('http://localhost:6061/add', (req, res) => {
     res.send(projectData);
     console.log(projectData, 'projectData posted');
 });
 
 //Post route
-app.post('/add', (req, res) => {
+app.post('http://localhost:6061/add', (req, res) => {
     let geodata = req.body;
     projectData["lat"] = geodata.lat;
     projectData["lng"] = geodata.lng;

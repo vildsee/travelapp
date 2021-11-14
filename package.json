@@ -14,11 +14,11 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node src/server/server.js",
+    "start": "node src/server/server.js --no-cors",
     "build": "webpack --config webpack.prod.js && webpack --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
-    "serve": "webpack serve  --config webpack.dev.js"
+    "serve": "webpack serve --config webpack.dev.js"
   },
   "repository": {
     "type": "git",

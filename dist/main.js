@@ -1082,7 +1082,7 @@ function performAction(event) {
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
         const res = await
-        postData('/add', {
+        postData('http://localhost:6061/add', {
             city: city,
             lat: geodata.geonames[0].lat,
             lng: geodata.geonames[0].lng,
@@ -1092,7 +1092,7 @@ function performAction(event) {
         getWeather(geodata.lat, geodata.lng)
             .then(async (weatherData) => {
                 const res = await
-                postData('/add', {
+                postData('http://localhost:6061/add', {
                     temp: weatherData.data.temp,
                     description: weatherData.description  
                 })
@@ -1122,8 +1122,8 @@ const getCoordinates = async(geoBaseUrl, city, username) => {
 };
 
 //Async POST
-const postData = async (url = '', data = {}) => {
-    const res = await fetch(url, {
+const postData = async (url='', data = {}) => {
+    const res = await fetch('http://localhost:6061/add', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -1142,8 +1142,8 @@ const postData = async (url = '', data = {}) => {
 };
 
 //Async GET
-const getData = async (url='') => {
-    const req = await fetch(url);
+const getData = async () => {
+    const req = await fetch('http://localhost:6061/add');
     try {
         let geodata = await req.json()
         console.log(geodata);
@@ -1171,7 +1171,7 @@ const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
 
 //Update UI
 const updateUI = async () => {
-    const req = await fetch('/all');
+    const req = await fetch('http://localhost:6061/add');
     try {
         const allData = await req.json();
 
@@ -1270,7 +1270,7 @@ const updateUI = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1506437967f7971e15b6")
+/******/ 		__webpack_require__.h = () => ("e6b34f7840c672620c1a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
