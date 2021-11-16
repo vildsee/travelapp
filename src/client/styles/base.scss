@@ -1,9 +1,59 @@
+@import "../../../node_modules/pikaday/scss/pikaday.scss";
+
+
+.pika-single {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    .pika-title {
+      color: #444;
+    }
+    .is-selected .pika-button {
+      border-radius: 0;
+      box-shadow: none;
+      background: #ec0000;
+    }
+    .pika-table tbody td {
+      border: 1px solid #b9b9b9;
+    }
+    .pika-button:hover {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: #868686 !important;
+    }
+    .is-today .pika-button {
+      color: #ec0000;
+    }
+    .is-today.is-selected .pika-button {
+      color: #fff;
+    }
+  }
+  
+  .hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+
+
 body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: beige;
+    background-color: #fffceb;
     max-width: 700px;
+    margin: auto;
+    font-family: 'Yuji Boku', serif;
+    background-image: url('../imgs/background.jpeg') no-repeat 0 0;
+    background-size: cover;
+    height: 100%;
 }
 
 .infos {
@@ -13,9 +63,32 @@ body {
     "info display";
 }
 
-.btn,
-.sbm {
+.btn {
     cursor: pointer;
+    margin-top: 5px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 25px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.2em;
+}
+
+#inputLocation, #startDate, #endDate {
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Yuji Boku', serif;
+}
+
+#startDate, #endDate {
+    padding: 5px 0px;
+    font-size: 1em;
+}
+
+#inputLocation {
+    padding: 10px 12px;
+    font-size: 1em;
 }
 
 .bar {

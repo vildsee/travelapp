@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en_GB" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400;700&family=Poiret+One&family=Shadows+Into+Light&family=Yuji+Boku&display=swap" rel="stylesheet">
+
         <title>Around the World travel planner</title>
     </head>
 
@@ -22,11 +26,11 @@
 
             <section class="tripInfo">
                 <form class="">
-                    <div id="tripStart">
+                    <div id="datepicker">
                         <label for="startDate">Start date:</label>
-                        <input type="date" id="startDate">
+                        <input type="text" id="start">
                         <label for="endDate">End date:</label>
-                        <input type="date" id="endDate">
+                        <input type="text" id="end">
                     </div>
                     <div id="tripLocation">
                         <input type="text" id="inputLocation" placeholder="Enter your destination">
@@ -35,7 +39,7 @@
                         <input type="button" class="btn" id="addLocationBtn" value="+ Add more destinations">
                     </div>
                     <div id="formsubmit">
-                        <input type="submit" class="sbm" id="submitTrip" value="Submit">
+                        <input type="submit" class="btn" id="submitTrip" value="Submit">
                     </div>
                 </form>
             </section>
@@ -89,5 +93,12 @@
                 </div>
             </div>
         </footer>
+        <script src="../js/pikaday.js"></script>
+        <script>
+            var picker = new Pikaday({ field: document.getElementById('datepicker') });
+        </script>
     </body>
+    
+    <script>
+    </script>
 </html>

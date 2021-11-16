@@ -17,7 +17,7 @@ module.exports = {
         // hot: true,
         // port: 6060,
         proxy: {
-            '/api': 'http://localhost:3000',
+            '/add': 'http://localhost:6061',
         },
     },
     // resolve: {

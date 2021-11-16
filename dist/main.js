@@ -17,12 +17,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg== */ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg=="), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII= */ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII="), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../imgs/background.jpeg */ "./src/client/imgs/background.jpeg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  background-color: beige;\n  max-width: 700px;\n}\n\n.infos {\n  display: grid;\n  grid-template-columns: auto 1fr;\n  grid-template-areas: \"info display\";\n}\n\n.btn,\n.sbm {\n  cursor: pointer;\n}\n\n.bar {\n  display: flex;\n  justify-content: space-between;\n  text-align: center;\n  border: 2px solid grey;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.tripInfo {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  padding: 10px;\n  border: 2px solid grey;\n  border-radius: 10px;\n  margin-top: 10px;\n}\n\n.extraInfo {\n  border: 2px solid grey;\n  border-radius: 10px;\n  margin-top: 10px;\n  margin-right: 10px;\n  padding: 10px;\n  max-width: 100%;\n}\n\n.displayData {\n  margin-top: 10px;\n}\n\n.oldTrips {\n  margin-top: 10px;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/base.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,uBAAA;EACA,sBAAA;EACA,uBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,aAAA;EACA,+BAAA;EACA,mCACA;AAAJ;;AAGA;;EAEI,eAAA;AAAJ;;AAGA;EACI,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;AAAJ;;AAGA;EACI,aAAA;EACA,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,kBAAA;EACA,aAAA;EACA,eAAA;AAAJ;;AAGA;EACI,gBAAA;AAAJ;;AAGA;EACI,gBAAA;AAAJ","sourcesContent":["body {\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    background-color: beige;\r\n    max-width: 700px;\r\n}\r\n\r\n.infos {\r\n    display: grid;\r\n    grid-template-columns: auto 1fr;\r\n    grid-template-areas: \r\n    \"info display\";\r\n}\r\n\r\n.btn,\r\n.sbm {\r\n    cursor: pointer;\r\n}\r\n\r\n.bar {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    text-align: center;\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    padding: 10px;\r\n}\r\n\r\n.tripInfo {\r\n    display:flex;\r\n    justify-content: center;\r\n    text-align: center;\r\n    padding: 10px;\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    margin-top: 10px;\r\n}\r\n\r\n.extraInfo {\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    margin-top: 10px;\r\n    margin-right: 10px;\r\n    padding: 10px;\r\n    max-width: 100%;\r\n}\r\n\r\n.displayData {\r\n    margin-top: 10px;\r\n}\r\n\r\n.oldTrips {\r\n    margin-top: 10px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n/*!\n * Pikaday\n * Copyright © 2014 David Bushell | BSD & MIT license | https://dbushell.com/\n */\n.pika-single {\n  z-index: 9999;\n  display: block;\n  position: relative;\n  color: #333;\n  background: #fff;\n  border: 1px solid #ccc;\n  border-bottom-color: #bbb;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\n.pika-single.is-hidden {\n  display: none;\n}\n.pika-single.is-bound {\n  position: absolute;\n  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.5);\n}\n\n.pika-single:before, .pika-single:after {\n  content: \" \";\n  display: table;\n}\n.pika-single:after {\n  clear: both;\n}\n\n.pika-lendar {\n  float: left;\n  width: 240px;\n  margin: 8px;\n}\n\n.pika-title {\n  position: relative;\n  text-align: center;\n}\n.pika-title select {\n  cursor: pointer;\n  position: absolute;\n  z-index: 9998;\n  margin: 0;\n  left: 0;\n  top: 5px;\n  opacity: 0;\n}\n\n.pika-label {\n  display: inline-block;\n  position: relative;\n  z-index: 9999;\n  overflow: hidden;\n  margin: 0;\n  padding: 5px 3px;\n  font-size: 14px;\n  line-height: 20px;\n  font-weight: bold;\n  color: #333;\n  background-color: #fff;\n}\n\n.pika-prev,\n.pika-next {\n  display: block;\n  cursor: pointer;\n  position: relative;\n  outline: none;\n  border: 0;\n  padding: 0;\n  width: 20px;\n  height: 30px;\n  text-indent: 20px;\n  white-space: nowrap;\n  overflow: hidden;\n  background-color: transparent;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 75% 75%;\n  opacity: 0.5;\n}\n.pika-prev:hover,\n.pika-next:hover {\n  opacity: 1;\n}\n.pika-prev.is-disabled,\n.pika-next.is-disabled {\n  cursor: default;\n  opacity: 0.2;\n}\n\n.pika-prev,\n.is-rtl .pika-next {\n  float: left;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n.pika-next,\n.is-rtl .pika-prev {\n  float: right;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n.pika-select {\n  display: inline-block;\n}\n\n.pika-table {\n  width: 100%;\n  border-collapse: collapse;\n  border-spacing: 0;\n  border: 0;\n}\n.pika-table th,\n.pika-table td {\n  width: 14.2857142857%;\n  padding: 0;\n}\n.pika-table th {\n  color: #999;\n  font-size: 12px;\n  line-height: 25px;\n  font-weight: bold;\n  text-align: center;\n}\n.pika-table abbr {\n  border-bottom: none;\n  cursor: help;\n}\n\n.pika-button {\n  cursor: pointer;\n  display: block;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  outline: none;\n  border: 0;\n  margin: 0;\n  width: 100%;\n  padding: 5px;\n  color: #666;\n  font-size: 12px;\n  line-height: 15px;\n  text-align: right;\n  background: #f5f5f5;\n  height: initial;\n}\n.has-event .pika-button {\n  color: #fff;\n  background: #33aaff;\n}\n.is-today .pika-button {\n  color: #33aaff;\n  font-weight: bold;\n}\n.is-selected .pika-button {\n  color: #fff;\n  font-weight: bold;\n  background: #33aaff;\n  box-shadow: inset 0 1px 3px #178fe5;\n  border-radius: 3px;\n}\n.is-disabled .pika-button, .is-outside-current-month .pika-button {\n  color: #999;\n  opacity: 0.3;\n}\n.is-disabled .pika-button {\n  pointer-events: none;\n  cursor: default;\n}\n.pika-button:hover {\n  color: #fff;\n  background: #ff8000;\n  box-shadow: none;\n  border-radius: 3px;\n}\n.pika-button .is-selection-disabled {\n  pointer-events: none;\n  cursor: default;\n}\n\n.pika-week {\n  font-size: 11px;\n  color: #999;\n}\n\n.is-inrange .pika-button {\n  color: #666;\n  background: #D5E9F7;\n}\n\n.is-startrange .pika-button {\n  color: #fff;\n  background: #6CB31D;\n  box-shadow: none;\n  border-radius: 3px;\n}\n\n.is-endrange .pika-button {\n  color: #fff;\n  background: #33aaff;\n  box-shadow: none;\n  border-radius: 3px;\n}\n\n.pika-single {\n  position: absolute;\n  top: 40px;\n  left: 0px;\n}\n.pika-single .pika-title {\n  color: #444;\n}\n.pika-single .is-selected .pika-button {\n  border-radius: 0;\n  box-shadow: none;\n  background: #ec0000;\n}\n.pika-single .pika-table tbody td {\n  border: 1px solid #b9b9b9;\n}\n.pika-single .pika-button:hover {\n  border-radius: 0 !important;\n  box-shadow: none !important;\n  background: #868686 !important;\n}\n.pika-single .is-today .pika-button {\n  color: #ec0000;\n}\n.pika-single .is-today.is-selected .pika-button {\n  color: #fff;\n}\n\n.hide-text {\n  text-indent: 100%;\n  white-space: nowrap;\n  overflow: hidden;\n}\n\n.group:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  background-color: #fffceb;\n  max-width: 700px;\n  margin: auto;\n  font-family: \"Yuji Boku\", serif;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") no-repeat 0 0;\n  background-size: cover;\n  height: 100%;\n}\n\n.infos {\n  display: grid;\n  grid-template-columns: auto 1fr;\n  grid-template-areas: \"info display\";\n}\n\n.btn {\n  cursor: pointer;\n  margin-top: 5px;\n  padding: 10px 10px;\n  text-align: center;\n  border-radius: 25px;\n  font-family: \"Shadows Into Light\", cursive;\n  font-size: 1.2em;\n}\n\n#inputLocation, #startDate, #endDate {\n  cursor: pointer;\n  margin-top: 5px;\n  border-radius: 15px;\n  text-align: center;\n  font-family: \"Yuji Boku\", serif;\n}\n\n#startDate, #endDate {\n  padding: 5px 0px;\n  font-size: 1em;\n}\n\n#inputLocation {\n  padding: 10px 12px;\n  font-size: 1em;\n}\n\n.bar {\n  display: flex;\n  justify-content: space-between;\n  text-align: center;\n  border: 2px solid grey;\n  border-radius: 10px;\n  padding: 10px;\n}\n\n.tripInfo {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n  padding: 10px;\n  border: 2px solid grey;\n  border-radius: 10px;\n  margin-top: 10px;\n}\n\n.extraInfo {\n  border: 2px solid grey;\n  border-radius: 10px;\n  margin-top: 10px;\n  margin-right: 10px;\n  padding: 10px;\n  max-width: 100%;\n}\n\n.displayData {\n  margin-top: 10px;\n}\n\n.oldTrips {\n  margin-top: 10px;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/base.scss","webpack://./node_modules/pikaday/scss/pikaday.scss"],"names":[],"mappings":"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","sourcesContent":["@import \"../../../node_modules/pikaday/scss/pikaday.scss\";\r\n\r\n\r\n.pika-single {\r\n    position: absolute;\r\n    top: 40px;\r\n    left: 0px;\r\n    .pika-title {\r\n      color: #444;\r\n    }\r\n    .is-selected .pika-button {\r\n      border-radius: 0;\r\n      box-shadow: none;\r\n      background: #ec0000;\r\n    }\r\n    .pika-table tbody td {\r\n      border: 1px solid #b9b9b9;\r\n    }\r\n    .pika-button:hover {\r\n      border-radius: 0 !important;\r\n      box-shadow: none !important;\r\n      background: #868686 !important;\r\n    }\r\n    .is-today .pika-button {\r\n      color: #ec0000;\r\n    }\r\n    .is-today.is-selected .pika-button {\r\n      color: #fff;\r\n    }\r\n  }\r\n  \r\n  .hide-text {\r\n    text-indent: 100%;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n  }\r\n  .group:after {\r\n    content: \"\";\r\n    display: table;\r\n    clear: both;\r\n  }\r\n\r\n\r\n\r\n\r\nbody {\r\n    display: flex;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    background-color: #fffceb;\r\n    max-width: 700px;\r\n    margin: auto;\r\n    font-family: 'Yuji Boku', serif;\r\n    background-image: url('../imgs/background.jpeg') no-repeat 0 0;\r\n    background-size: cover;\r\n    height: 100%;\r\n}\r\n\r\n.infos {\r\n    display: grid;\r\n    grid-template-columns: auto 1fr;\r\n    grid-template-areas: \r\n    \"info display\";\r\n}\r\n\r\n.btn {\r\n    cursor: pointer;\r\n    margin-top: 5px;\r\n    padding: 10px 10px;\r\n    text-align: center;\r\n    border-radius: 25px;\r\n    font-family: 'Shadows Into Light', cursive;\r\n    font-size: 1.2em;\r\n}\r\n\r\n#inputLocation, #startDate, #endDate {\r\n    cursor: pointer;\r\n    margin-top: 5px;\r\n    border-radius: 15px;\r\n    text-align: center;\r\n    font-family: 'Yuji Boku', serif;\r\n}\r\n\r\n#startDate, #endDate {\r\n    padding: 5px 0px;\r\n    font-size: 1em;\r\n}\r\n\r\n#inputLocation {\r\n    padding: 10px 12px;\r\n    font-size: 1em;\r\n}\r\n\r\n.bar {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    text-align: center;\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    padding: 10px;\r\n}\r\n\r\n.tripInfo {\r\n    display:flex;\r\n    justify-content: center;\r\n    text-align: center;\r\n    padding: 10px;\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    margin-top: 10px;\r\n}\r\n\r\n.extraInfo {\r\n    border: 2px solid grey;\r\n    border-radius: 10px;\r\n    margin-top: 10px;\r\n    margin-right: 10px;\r\n    padding: 10px;\r\n    max-width: 100%;\r\n}\r\n\r\n.displayData {\r\n    margin-top: 10px;\r\n}\r\n\r\n.oldTrips {\r\n    margin-top: 10px;\r\n}","/*!\n * Pikaday\n * Copyright © 2014 David Bushell | BSD & MIT license | https://dbushell.com/\n */\n\n// Variables\n// Declare any of these variables before importing this SCSS file to easily override defaults\n// Variables are namespaced with the pd (pikaday) prefix\n\n// Colours\n$pd-text-color: #333 !default;\n$pd-title-color: #333 !default;\n$pd-title-bg: #fff !default;\n$pd-picker-bg: #fff !default;\n$pd-picker-border: #ccc !default;\n$pd-picker-border-bottom: #bbb !default;\n$pd-picker-shadow: rgba(0,0,0,.5) !default;\n$pd-th-color: #999 !default;\n$pd-day-color: #666 !default;\n$pd-day-bg: #f5f5f5 !default;\n$pd-day-hover-color: #fff !default;\n$pd-day-hover-bg: #ff8000 !default;\n$pd-day-today-color: #33aaff !default;\n$pd-day-selected-color: #fff !default;\n$pd-day-selected-bg: #33aaff !default;\n$pd-day-selected-shadow: #178fe5 !default;\n$pd-day-disabled-color: #999 !default;\n$pd-week-color: #999 !default;\n$pd-inrange-color: #666 !default;\n$pd-inrange-bg: #D5E9F7 !default;\n$pd-startrange-color: #fff !default;\n$pd-startrange-bg: #6CB31D !default;\n$pd-endrange-color: #fff !default;\n$pd-endrange-bg: #33aaff !default;\n$pd-event-color: #fff !default;\n$pd-event-bg: #33aaff !default;\n\n$pd-z-index: 9999 !default;\n$pd-font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif !default;\n$pd-border-radius: 3px !default;\n\n\n.pika-single {\n    z-index: $pd-z-index;\n    display: block;\n    position: relative;\n    color: $pd-text-color;\n    background: $pd-picker-bg;\n    border: 1px solid $pd-picker-border;\n    border-bottom-color: $pd-picker-border-bottom;\n    font-family: $pd-font-family;\n\n    &.is-hidden {\n        display: none;\n    }\n\n    &.is-bound {\n        position: absolute;\n        box-shadow: 0 5px 15px -5px $pd-picker-shadow;\n    }\n}\n\n// clear child float (pika-lendar), using the famous micro clearfix hack\n// http://nicolasgallagher.com/micro-clearfix-hack/\n.pika-single {\n    &:before,\n    &:after {\n        content: \" \";\n        display: table;\n    }\n\n    &:after { clear: both }\n}\n\n.pika-lendar {\n    float: left;\n    width: 240px;\n    margin: 8px;\n}\n\n.pika-title {\n    position: relative;\n    text-align: center;\n\n    select {\n        cursor: pointer;\n        position: absolute;\n        z-index: $pd-z-index - 1;\n        margin: 0;\n        left: 0;\n        top: 5px;\n        opacity: 0;\n    }\n}\n\n.pika-label {\n    display: inline-block;\n    position: relative;\n    z-index: $pd-z-index;\n    overflow: hidden;\n    margin: 0;\n    padding: 5px 3px;\n    font-size: 14px;\n    line-height: 20px;\n    font-weight: bold;\n    color: $pd-title-color;\n    background-color: $pd-title-bg;\n}\n\n.pika-prev,\n.pika-next {\n    display: block;\n    cursor: pointer;\n    position: relative;\n    outline: none;\n    border: 0;\n    padding: 0;\n    width: 20px;\n    height: 30px;\n    text-indent: 20px; // hide text using text-indent trick, using width value (it's enough)\n    white-space: nowrap;\n    overflow: hidden;\n    background-color: transparent;\n    background-position: center center;\n    background-repeat: no-repeat;\n    background-size: 75% 75%;\n    opacity: .5;\n\n    &:hover {\n        opacity: 1;\n    }\n\n    &.is-disabled {\n        cursor: default;\n        opacity: .2;\n    }\n}\n\n.pika-prev,\n.is-rtl .pika-next {\n    float: left;\n    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==');\n}\n\n.pika-next,\n.is-rtl .pika-prev {\n    float: right;\n    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=');\n}\n\n.pika-select {\n    display: inline-block;\n}\n\n.pika-table {\n    width: 100%;\n    border-collapse: collapse;\n    border-spacing: 0;\n    border: 0;\n\n    th,\n    td {\n        width: 14.285714285714286%;\n        padding: 0;\n    }\n\n    th {\n        color: $pd-th-color;\n        font-size: 12px;\n        line-height: 25px;\n        font-weight: bold;\n        text-align: center;\n    }\n\n    abbr {\n        border-bottom: none;\n        cursor: help;\n    }\n}\n\n.pika-button {\n    cursor: pointer;\n    display: block;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    outline: none;\n    border: 0;\n    margin: 0;\n    width: 100%;\n    padding: 5px;\n    color: $pd-day-color;\n    font-size: 12px;\n    line-height: 15px;\n    text-align: right;\n    background: $pd-day-bg;\n    height: initial;\n\n    .has-event & {\n        color: $pd-event-color;\n        background: $pd-event-bg;\n    }\n\n    .is-today & {\n        color: $pd-day-today-color;\n        font-weight: bold;\n    }\n\n    .is-selected & {\n        color: $pd-day-selected-color;\n        font-weight: bold;\n        background: $pd-day-selected-bg;\n        box-shadow: inset 0 1px 3px $pd-day-selected-shadow;\n        border-radius: $pd-border-radius;\n    }\n\n    .is-disabled &,\n    .is-outside-current-month & {\n        color: $pd-day-disabled-color;\n        opacity: .3;\n    }\n\n    .is-disabled & {\n        pointer-events: none;\n        cursor: default;\n    }\n\n    &:hover {\n        color: $pd-day-hover-color;\n        background: $pd-day-hover-bg;\n        box-shadow: none;\n        border-radius: $pd-border-radius;\n    }\n\n    .is-selection-disabled {\n        pointer-events: none;\n        cursor: default;\n    }\n}\n\n.pika-week {\n    font-size: 11px;\n    color: $pd-week-color;\n}\n\n.is-inrange .pika-button {\n    color: $pd-inrange-color;\n    background: $pd-inrange-bg;\n}\n\n.is-startrange .pika-button {\n    color: $pd-startrange-color;\n    background: $pd-startrange-bg;\n    box-shadow: none;\n    border-radius: $pd-border-radius;\n}\n\n.is-endrange .pika-button {\n    color: $pd-endrange-color;\n    background: $pd-endrange-bg;\n    box-shadow: none;\n    border-radius: $pd-border-radius;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -76,7 +85,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header h1 {\n  color: black;\n  display: flex;\n  justify-content: center;\n  padding-top: 20px;\n  font-size: 24px;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/header.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,uBAAA;EACA,iBAAA;EACA,eAAA;AACJ","sourcesContent":["header h1 {\r\n    color: black;\r\n    display: flex;\r\n    justify-content: center;\r\n    padding-top: 20px;\r\n    font-size: 24px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "header h1 {\n  color: black;\n  display: flex;\n  justify-content: center;\n  padding-top: 20px;\n  font-size: 24px;\n}", "",{"version":3,"sources":["webpack://./src/client/styles/header.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,uBAAA;EACA,iBAAA;EACA,eAAA;AACJ","sourcesContent":["header h1 {\r\n    color: black;\r\n    display: flex;\r\n    justify-content: center;\r\n    padding-top: 20px;\r\n    font-size: 24px;\r\n    \r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -218,6 +227,45 @@ module.exports = function (cssWithMappingToString) {
   };
 
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  }
+
+  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
+
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
 };
 
 /***/ }),
@@ -1035,6 +1083,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_resets_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/resets.scss */ "./src/client/styles/resets.scss");
 /* harmony import */ var _js_app_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/app.js */ "./src/client/js/app.js");
 /* harmony import */ var _js_app_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_app_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _js_dates_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/dates.js */ "./src/client/js/dates.js");
+/* harmony import */ var _js_dates_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_dates_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _js_pikaday_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/pikaday.js */ "./src/client/js/pikaday.js");
+/* harmony import */ var _js_pikaday_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_js_pikaday_js__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
 
 
 
@@ -1054,23 +1109,17 @@ __webpack_require__.r(__webpack_exports__);
   \******************************/
 /***/ (() => {
 
-
-
 /* GeoNames API Variables */
 const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
 const username = '&username=vildsee';
 
 /* Weatherbit API Variables */
-const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily';
+const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
 const weatherKey = `&key=${"1a77645c2dca40088908444918bacbb7"}`;
 
 /* Pixabay API Variables */
-
-
-// Create a new date instance dynamically with JS
-let day = new Date();
-let newDate = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
-document.getElementById('date').innerHTML = newDate;
+const pixabayBaseUrl = 'https://pixabay.com/api/';
+const pixabayKey = `?key=${"24291413-a1c99d0fb3b3a66d3cf315472"}`;
 
 //Eventlistener for id=generate
 document.querySelector('#submitTrip').addEventListener('click', performAction);
@@ -1079,47 +1128,33 @@ document.querySelector('#submitTrip').addEventListener('click', performAction);
 function performAction(event) {
     event.preventDefault();
     const city = document.getElementById('inputLocation').value;
+    
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
         const res = await
-        postData('http://localhost:6061/add', {
+        postData('/add', {
             city: city,
             lat: geodata.geonames[0].lat,
             lng: geodata.geonames[0].lng,
+            name: geodata.geonames[0].name,
             countryName: geodata.geonames[0].countryName
 
         })
-        getWeather(geodata.lat, geodata.lng)
+        const lat = geodata.geonames[0].lat;
+        const lng = geodata.geonames[0].lng;
+        getWeather(weatherBaseUrl, lat, lng, weatherKey)
             .then(async (weatherData) => {
                 const res = await
-                postData('http://localhost:6061/add', {
-                    temp: weatherData.data.temp,
-                    description: weatherData.description  
+                postData('/add', {
+                    temp: weatherData.data[0].temp,
                 })
             })
     })
-    
-    
-        
-    
+      
     .then(() => updateUI());
 }
 
-//Request to GeoNames API
-const getCoordinates = async(geoBaseUrl, city, username) => {
-    const res = await fetch(geoBaseUrl+city+'&maxRows=1'+username)
-    console.log('url', res)
-    try {
-        const geodata = await res.json();
-        console.log(geodata.geonames[0])
-        console.log(`Lat: ${geodata.geonames[0].lat}`)
-        console.log(`Lng: ${geodata.geonames[0].lng}`)
-        console.log(`CountryName: ${geodata.geonames[0].countryName}`)
-        return geodata
-    } catch(error) {
-        console.log('error getCoordinates');
-    }
-};
+
 
 //Async POST
 const postData = async (url='', data = {}) => {
@@ -1153,6 +1188,22 @@ const getData = async () => {
     }
 };
 
+//Request to GeoNames API
+const getCoordinates = async(geoBaseUrl, city, username) => {
+    const res = await fetch(geoBaseUrl+city+'&maxRows=1'+username)
+    console.log('url', res)
+    try {
+        const geodata = await res.json();
+        console.log(geodata.geonames[0])
+        console.log(`Lat: ${geodata.geonames[0].lat}`)
+        console.log(`Lng: ${geodata.geonames[0].lng}`)
+        console.log(`CountryName: ${geodata.geonames[0].countryName}`)
+        return geodata
+    } catch(error) {
+        console.log('error getCoordinates');
+    }
+};
+
 //Request to Weatherbit
 const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
     const res = await fetch(weatherBaseUrl + '&lat=' + lat + '&lon=' + lng + weatherKey)
@@ -1160,28 +1211,135 @@ const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
     try {
         const weatherData = await res.json();
         console.log(weatherData)
-        return {
-            temp: weatherData.data[0].temp,
-            description: weatherData.data[0].weather.description
-        }
+        return weatherData;
     } catch(error) {
         console.log('error req to weatherbit', error)
     }
 }
 
+//Request to Pixabay
+// const getpics = async (pixabayBaseUrl, pixabayKey, city) => {
+//     const res = await fetch(pixabayBaseUrl + pixabayKey + '&q=' + city + '&image_type=photo')
+//     console.log('url', res)
+//     try {
+//         const picData = await res.json();
+//     }
+// }
+
 //Update UI
 const updateUI = async () => {
-    const req = await fetch('http://localhost:6061/add');
+    const req = await fetch('http://localhost:6061/all');
     try {
-        const allData = await req.json();
+        const geodata = await req.json();
 
-        document.getElementById('destination').innerHTML = `${performAction.city}, ${projectData.geodata.countryName}`;
-        document.getElementById('weather').innerHTML = `Temperature: ${projectData.weatherData.temp}`;
+        document.getElementById('destination').innerHTML = `${geodata.name}, ${geodata.countryName}`;
+        document.getElementById('weather').innerHTML = `Temperature: ${geodata.weatherData.temp}`;
         document.getElementById('countryData').innerHTML = ``;
     }catch(error){
         console.log('error UI', error);
     }
 };
+
+/***/ }),
+
+/***/ "./src/client/js/dates.js":
+/*!********************************!*\
+  !*** ./src/client/js/dates.js ***!
+  \********************************/
+/***/ (() => {
+
+// Create a new date instance dynamically with JS
+let day = new Date();
+let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
+document.getElementById('date').innerHTML = today;
+
+
+
+/***/ }),
+
+/***/ "./src/client/js/pikaday.js":
+/*!**********************************!*\
+  !*** ./src/client/js/pikaday.js ***!
+  \**********************************/
+/***/ (() => {
+
+var picker = new Pikaday({ field: document.getElementById('datepicker') });
+
+var startDate,
+        endDate,
+        updateStartDate = function() {
+            startPicker.setStartRange(startDate);
+            endPicker.setStartRange(startDate);
+            endPicker.setMinDate(startDate);
+        },
+        updateEndDate = function() {
+            startPicker.setEndRange(endDate);
+            startPicker.setMaxDate(endDate);
+            endPicker.setEndRange(endDate);
+        },
+        startPicker = new Pikaday({
+            field: document.getElementById('start'),
+            minDate: new Date(),
+            maxDate: new Date(2020, 12, 31),
+            onSelect: function() {
+                startDate = this.getDate();
+                updateStartDate();
+            }
+        }),
+        endPicker = new Pikaday({
+            field: document.getElementById('end'),
+            minDate: new Date(),
+            maxDate: new Date(2020, 12, 31),
+            onSelect: function() {
+                endDate = this.getDate();
+                updateEndDate();
+            }
+        }),
+        _startDate = startPicker.getDate(),
+        _endDate = endPicker.getDate();
+
+        if (_startDate) {
+            startDate = _startDate;
+            updateStartDate();
+        }
+
+        if (_endDate) {
+            endDate = _endDate;
+            updateEndDate();
+        }
+
+/***/ }),
+
+/***/ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII= ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=";
+
+/***/ }),
+
+/***/ "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg== ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==";
+
+/***/ }),
+
+/***/ "./src/client/imgs/background.jpeg":
+/*!*****************************************!*\
+  !*** ./src/client/imgs/background.jpeg ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "4960ceea20bc214e0af6.jpeg";
 
 /***/ })
 
@@ -1270,7 +1428,7 @@ const updateUI = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e6b34f7840c672620c1a")
+/******/ 		__webpack_require__.h = () => ("cebb1392e431f63061e6")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -1748,7 +1906,7 @@ const updateUI = async () => {
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
-/******/ 		// no baseURI
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched

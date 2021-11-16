@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.static('dist'));
 console.log(__dirname)
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // Setup Server
 const port = 6061;
 const server = app.listen(port, () => {
@@ -20,17 +23,19 @@ const server = app.listen(port, () => {
 });
 
 //Get route
-app.get('http://localhost:6061/add', (req, res) => {
+app.get('/all', (req, res) => {
     res.send(projectData);
     console.log(projectData, 'projectData posted');
 });
 
 //Post route
-app.post('http://localhost:6061/add', (req, res) => {
+app.post('/add', (req, res) => {
+    console.log(req.body);
     let geodata = req.body;
     projectData["lat"] = geodata.lat;
     projectData["lng"] = geodata.lng;
     projectData["countryName"] = geodata.countryName;
+    projectData["name"] = geodata.name;
     res.send(projectData)
     console.log("geo add")
 
