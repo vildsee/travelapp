@@ -39,52 +39,8 @@ app.post('/add', (req, res) => {
 
 })
 
-// app.post('/add', (req,res) => {
-//     console.log(req.body);
-//     let weatherData = req.body;
-//     projectData["webformatURL"] = weatherData.webformatURL;
-//     res.send(projectData);
-//     console.log('weather add');
-// })
-
-// app.post('/all', (req,res) => {
-//     console.log(req.body);
-//     let picData = req.body;
-//     projectData["webformatURL"] = picData.webformatURL;
-//     res.send(projectData);
-//     console.log('pic add');
-// })
-
-
 //Get route
 app.get('/all', (req, res) => {
     res.send(projectData);
     console.log(projectData, 'projectData posted');
 });
-
-// app.post('/add', (req, res) => {
-//     console.log(req.body)
-//     let geodata = {
-//         lat: req.body.lat,
-//         lng: req.body.lng,
-//         countryName: req.body.countryName,
-//         name: req.body.name
-//     }
-//     projectData.geodata = geodata;
-//     console.log(geodata, 'geodata')
-
-//     let weatherData = {
-//         temp: req.body.temp,
-//         description: req.body.description
-//     }
-//     projectData.weatherData = weatherData
-//     console.log(weatherData, 'weatherdata')
-
-//     let picData = {
-//         webformatURL: req.body.webformatURL
-//     }
-//     projectData.picData = picData
-//     console.log(picData, 'picdata')
-
-//     res.send(projectData);
-// });

@@ -28,34 +28,47 @@ function performAction(event) {
 
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
-        const res = await
-        postData('/all', {
-            city: city,
-            lat: geodata.geonames[0].lat,
-            lng: geodata.geonames[0].lng,
-            name: geodata.geonames[0].name,
-            countryName: geodata.geonames[0].countryName
 
-        })
-        
         const lat = geodata.geonames[0].lat;
         const lng = geodata.geonames[0].lng;
-        
+        const res = await
+
         getWeather(weatherBaseUrl, lat, lng, weatherKey)
         .then(async (weatherData) => {
             const res = await
-            postData('/all', {
-                temp: weatherData.data[0].temp,
-            })
-        })
             getPics(pixabayBaseUrl, pixabayKey, city)
-            .then(async (picData) => {
-                
-                const res = await                
-                postData('/all', {
-                    webformatURL: picData.hits[0].webformatURL,
-                })
-            })            
+                        .then(async (picData) => {
+                            
+                            const res = await                
+                            postData('/all', {
+                                city: city,
+                                lat: geodata.geonames[0].lat,
+                                lng: geodata.geonames[0].lng,
+                                name: geodata.geonames[0].name,
+                                countryName: geodata.geonames[0].countryName,
+
+                                temp: weatherData.data[0].temp,
+                                
+                                webformatURL: picData.hits[0].webformatURL,
+                            })
+                        })     
+            // postData('/all', {
+            //     temp: weatherData.data[0].temp,
+            // })
+        })
+        // postData('/all', {
+        //     city: city,
+        //     lat: geodata.geonames[0].lat,
+        //     lng: geodata.geonames[0].lng,
+        //     name: geodata.geonames[0].name,
+        //     countryName: geodata.geonames[0].countryName
+
+        // })
+        
+        
+        
+        
+                   
         
         countdown()
         tripLength()
