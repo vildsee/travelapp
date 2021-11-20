@@ -1,48 +1,6 @@
 @import "../../../node_modules/pikaday/scss/pikaday.scss";
 
 
-.pika-single {
-    position: absolute;
-    top: 40px;
-    left: 0px;
-    .pika-title {
-      color: #444;
-    }
-    .is-selected .pika-button {
-      border-radius: 0;
-      box-shadow: none;
-      background: #ec0000;
-    }
-    .pika-table tbody td {
-      border: 1px solid #b9b9b9;
-    }
-    .pika-button:hover {
-      border-radius: 0 !important;
-      box-shadow: none !important;
-      background: #868686 !important;
-    }
-    .is-today .pika-button {
-      color: #ec0000;
-    }
-    .is-today.is-selected .pika-button {
-      color: #fff;
-    }
-  }
-  
-  .hide-text {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .group:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-
-
-
 body {
     display: flex;
     justify-content: center;
@@ -51,9 +9,13 @@ body {
     max-width: 700px;
     margin: auto;
     font-family: 'Yuji Boku', serif;
-    background-image: url('../imgs/background.jpeg') no-repeat 0 0;
+    background: url('../imgs/background.jpeg') no-repeat;
     background-size: cover;
     height: 100%;
+}
+
+section {
+  background-color: rgba(255, 252, 235, 0.5);
 }
 
 .infos {
@@ -121,8 +83,10 @@ body {
 
 .displayData {
     margin-top: 10px;
+    padding: 10px;
 }
 
 .oldTrips {
     margin-top: 10px;
+    padding: 10px;
 }

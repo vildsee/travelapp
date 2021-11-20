@@ -28,8 +28,8 @@ module.exports = {
     output: {
         libraryTarget: 'var',
         library: 'Client',
-        // filename: '[name].bundle.js',
-        // path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     module: {
@@ -49,15 +49,8 @@ module.exports = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|jpe?g|gif|ico)$/i,
-                use: [
-                    {
-                        loader: 'file-loader?name=[name].[ext]',
-                        options: {
-                            esModule: false,
-                        },
-                    },
-                ],
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.html$/i,

@@ -26,7 +26,7 @@
 
             <section class="tripInfo">
                 <form class="">
-                    <div id="datepicker">
+                    <div id="dates">
                         <label for="startDate">Start date:</label>
                         <input type="text" id="start">
                         <label for="endDate">End date:</label>
@@ -67,6 +67,10 @@
 
             <section class="displayData">
                 <div id="destination"></div>
+                <div id="cityImage"></div>
+                <div id="duration"></div>
+                <div id="countdown"></div>
+                <div id="length"></div>
                 <div id="weather"></div>
                 <div id="countryData"></div>
             </section>
@@ -93,9 +97,52 @@
                 </div>
             </div>
         </footer>
-        <script src="../js/pikaday.js"></script>
+        <script src="../../../node_modules/pikaday/pikaday.js"></script>
         <script>
-            var picker = new Pikaday({ field: document.getElementById('datepicker') });
+            var startDate,
+        endDate,
+        updateStartDate = function() {
+            startPicker.setStartRange(startDate);
+            endPicker.setStartRange(startDate);
+            endPicker.setMinDate(startDate);
+        },
+        updateEndDate = function() {
+            startPicker.setEndRange(endDate);
+            startPicker.setMaxDate(endDate);
+            endPicker.setEndRange(endDate);
+        },
+        startPicker = new Pikaday({
+            field: document.getElementById('start'),
+            minDate: new Date(),
+            maxDate: new Date(2030, 12, 31),
+            onSelect: function() {
+                
+                startDate = this.getDate();
+                updateStartDate();
+                
+            }
+        }),
+        endPicker = new Pikaday({
+            field: document.getElementById('end'),
+            minDate: new Date(),
+            maxDate: new Date(2030, 12, 31),
+            onSelect: function() {
+                endDate = this.getDate();
+                updateEndDate();
+            }
+        }),
+        _startDate = startPicker.getDate(),
+        _endDate = endPicker.getDate();
+
+        if (_startDate) {
+            startDate = _startDate;
+            updateStartDate();
+        }
+
+        if (_endDate) {
+            endDate = _endDate;
+            updateEndDate();
+        }
         </script>
     </body>
     
