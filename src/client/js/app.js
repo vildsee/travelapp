@@ -1,3 +1,4 @@
+
 /* GeoNames API Variables */
 const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
 const username = '&username=vildsee';
@@ -13,10 +14,14 @@ const pixabayKey = `?key=${process.env.PIXABAY_API_KEY}`;
 // Create a new date instance dynamically with JS
 let day = new Date();
 let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
+let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;
 
 //Global variables
-const countHTML = document.getElementById('countdown')
+const wHeader = document.getElementById('wHeader')
+const icon = document.getElementById('weatherIcon')
+const forecast = document.getElementById('forecast')
+
 //Eventlistener for id=generate
 document.querySelector('#submitTrip').addEventListener('click', performAction);
 
@@ -25,6 +30,11 @@ document.querySelector('#submitTrip').addEventListener('click', performAction);
 function performAction(event) {
     event.preventDefault();
     const city = document.getElementById('inputLocation').value;
+    const day = new Date().getTime()
+    const startDate = new Date(document.getElementById('start').value)
+
+    count = startDate - day
+    console.log(count)
 
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
@@ -36,39 +46,35 @@ function performAction(event) {
         getWeather(weatherBaseUrl, lat, lng, weatherKey)
         .then(async (weatherData) => {
             const res = await
+
             getPics(pixabayBaseUrl, pixabayKey, city)
-                        .then(async (picData) => {
-                            
-                            const res = await                
-                            postData('/all', {
-                                city: city,
-                                lat: geodata.geonames[0].lat,
-                                lng: geodata.geonames[0].lng,
-                                name: geodata.geonames[0].name,
-                                countryName: geodata.geonames[0].countryName,
+            .then(async (picData) => {
+            const res = await                
+            
+            postData('/all', {
+                city: city,
+                lat: geodata.geonames[0].lat,
+                lng: geodata.geonames[0].lng,
+                name: geodata.geonames[0].name,
+                countryName: geodata.geonames[0].countryName,
+                citypic: picData.hits[0].webformatURL,
 
-                                temp: weatherData.data[0].temp,
+                temp: weatherData.data[0].temp,
+                todayWind: weatherData.data[0].wind_spd,
+                todayIcon: weatherData.data[0].weather.icon,
+                description: weatherData.data[0].weather.description,
+                week_min_temp: weatherData.data[wCountdown()].min_temp,
+                week_max_temp: weatherData.data[wCountdown()].max_temp,
+                weekWind: weatherData.data[wCountdown()].wind_spd,
+                weekIcon: weatherData.data[wCountdown()].weather.icon,
+                fut_min_temp: weatherData.data[15].min_temp,
+                fut_max_temp: weatherData.data[15].max_temp,
+                futWind: weatherData.data[15].wind_spd,
+                futIcon: weatherData.data[15].weather.icon,
                                 
-                                webformatURL: picData.hits[0].webformatURL,
-                            })
-                        })     
-            // postData('/all', {
-            //     temp: weatherData.data[0].temp,
-            // })
-        })
-        // postData('/all', {
-        //     city: city,
-        //     lat: geodata.geonames[0].lat,
-        //     lng: geodata.geonames[0].lng,
-        //     name: geodata.geonames[0].name,
-        //     countryName: geodata.geonames[0].countryName
-
-        // })
-        
-        
-        
-        
-                   
+                })
+            })
+        })                
         
         countdown()
         tripLength()
@@ -160,49 +166,35 @@ const updateUI = async () => {
     try {
         const projectData = await req.json();
         // const displayData = document.getElementsByClassName('displayData')
-        const pic = projectData.webformatURL;
-        console.log(projectData.webformatURL);
+        const pic = projectData.citypic;
+
+        countdownConditions()
 
         document.getElementById('destination').innerHTML = `${projectData.name}, ${projectData.countryName}`;
         document.getElementById('cityImage').innerHTML = `<img src="${pic}" alt="img not found" width="200px"/>`;
         document.getElementById('duration').innerHTML = `${startDate.toDateString()}-${endDate.toDateString()}`;
-        document.getElementById('weather').innerHTML = `Temperature: ${projectData.temp}°C`;
         document.getElementById('countryData').innerHTML = ``;
+
+        if (countdown() <= 6){
+                wHeader.innerHTML = `Weather now:`;
+                icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.todayIcon}.png" alt="weather icon"/>`;
+                forecast.innerHTML= `${projectData.description} ${projectData.temp}°C, wind speed is ${projectData.todayWind}m/s`;
+
+            } 
+            else if (countdown() <= 15){
+                wHeader.innerHTML = `Weather on ${startDate.toDateString()}:`;
+                icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.weekIcon}.png" alt="weather icon"/>`;
+                forecast.innerHTML = `Temperature will be between ${projectData.week_min_temp}°C and ${projectData.week_max_temp}°C, wind ${projectData.weekWind}m/s`;
+            } 
+            else {
+                wHeader.innerHTML = `Weather on ${forecastDate.toDateString()}`;
+                icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.futIcon}.png" alt="weather icon"/>`;
+                forecast.innerHTML = `Temperature will be between ${projectData.fut_min_temp}°C and ${projectData.fut_max_temp}°C, wind ${projectData.futWind}m/s`;
+            }
+        
+            
     } catch(error){
         console.log('error UI', error);
     }
 };
 
-//Countdown
-countdown = () => {
-    
-    const day = new Date().getTime()
-    const startDate = new Date(document.getElementById('start').value)
-
-    var count = startDate - day
-    var days = Math.floor(count / (1000 * 60 * 60 * 24));
-    
-    if(days >= 1){
-        countHTML.innerHTML = `Your trip is in ${days + 1} days`
-    } else if(days === 0){
-        countHTML.innerHTML = 'Your trip is tomorrow!'
-    } else if(days === -1){
-        countHTML.innerHTML = 'Your trip is today!'
-    }
-    
-};
-
-tripLength = () =>{
-    const lengthHTML = document.getElementById('length')
-    const startDate = new Date(document.getElementById('start').value)
-    const endDate = new Date(document.getElementById('end').value)
-
-    var daysDifference = endDate - startDate
-    var lengthDays = Math.floor(daysDifference / (1000 * 60 * 60 * 24));
-
-    if (lengthDays >= 2) {
-        lengthHTML.innerHTML = `Your trip will be ${lengthDays} days long`
-    } else if (lengthDays === 1) {
-        lengthHTML.innerHTML = `Your trip will be ${lengthDays} day long`
-    }
-}

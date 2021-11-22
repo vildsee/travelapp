@@ -25,15 +25,30 @@ const server = app.listen(port, () => {
 //Post route
 app.post('/add', (req, res) => {
     console.log(req.body);
-    let geodata = req.body;
-    projectData["lat"] = geodata.lat;
-    projectData["lng"] = geodata.lng;
-    projectData["countryName"] = geodata.countryName;
-    projectData["startDate"] = geodata.startDate;
-    projectData["endDate"] = geodata.endDate;
-    projectData["name"] = geodata.name;
-    projectData["temp"] = geodata.temp;
-    projectData["webformatURL"] = geodata.webformatURL;
+    let data = req.body;
+    projectData["lat"] = data.lat;
+    projectData["lng"] = data.lng;
+    projectData["countryName"] = data.countryName;
+    // projectData["startDate"] = data.startDate;
+    // projectData["endDate"] = data.endDate;
+    projectData["name"] = data.name;
+    projectData["citypic"] = data.citypic;
+
+    projectData["temp"] = data.temp;
+    projectData["todayWind"] = data.todayWind;
+    
+    projectData["todayIcon"] = data.todayIcon;
+    projectData["description"] = data.description;
+
+    projectData["week_min_temp"] = data.week_min_temp;
+    projectData["week_max_temp"] = data.week_max_temp;
+    projectData["weekWind"] = data.weekWind;
+    projectData["weekIcon"] = data.weekIcon;
+
+    projectData["fut_min_temp"] = data.fut_min_temp;
+    projectData["fut_max_temp"] = data.fut_max_temp;
+    projectData["futWind"] = data.futWind;    
+    projectData["futIcon"] = data.futIcon;
     res.send(projectData)
     console.log("geo add")
 

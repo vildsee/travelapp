@@ -9,7 +9,7 @@ body {
     max-width: 700px;
     margin: auto;
     font-family: 'Yuji Boku', serif;
-    background: url('../imgs/background.jpeg') no-repeat;
+    background: url('../media/background.jpeg') no-repeat;
     background-size: cover;
     height: 100%;
 }
@@ -40,7 +40,7 @@ section {
     margin-top: 5px;
     border-radius: 15px;
     text-align: center;
-    font-family: 'Yuji Boku', serif;
+    font-family: 'Poiret One', serif;
 }
 
 #startDate, #endDate {
@@ -70,6 +70,7 @@ section {
     border: 2px solid grey;
     border-radius: 10px;
     margin-top: 10px;
+    
 }
 
 .extraInfo {
@@ -84,6 +85,8 @@ section {
 .displayData {
     margin-top: 10px;
     padding: 10px;
+    font-family: 'Amatic SC';
+    font-size: 1.5em;
 }
 
 .oldTrips {
