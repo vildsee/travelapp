@@ -12,8 +12,8 @@ import './js/lists.js'
 //Functions, events
 import { performAction } from './js/app.js'
 import { countdown, countdownConditions, wCountdown, tripLength } from './js/countdown.js'
-// import { chooseWeather } from './js/lists.js'
+import { hotelInfo } from './js/lists.js'
 
 
 
-export { performAction, countdown, countdownConditions, wCountdown, tripLength }
+export { performAction, countdown, countdownConditions, wCountdown, tripLength, hotelInfo }
