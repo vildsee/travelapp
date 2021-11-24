@@ -1,0 +1,178 @@
+.extraInfo {
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    max-width: 100%;
+    font-family: 'Shadows Into Light', cursive;
+    
+    form{
+        align-items: center;
+    }
+
+    .inputs{
+        width: 75%;
+        justify-content: center;
+        padding: 7px 0px;
+    }
+
+    
+}
+
+.eInputs {
+        padding-top: 7px;
+        padding-left: 7px;
+        padding-bottom: 25px;
+        cursor: text;
+}
+
+.listInput {
+    padding: 5px 7px;
+}
+
+#hForm, #fForm {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#hotelInfo, #flightInfo, #packingList {
+    display: none;
+    background-color: rgba(255, 252, 235, 0.5);
+    border-radius: 15px;
+    padding: 1px 7px 10px 7px;
+    margin: 5px 0 5px 0;
+}
+
+//Packinglist
+#packingList {
+    max-width: 100%;
+    padding: 1px 7px 10px 7px;
+    margin: 5px 0 5px 0;
+    
+    h3 {
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    li * {
+        float:left;
+    }
+
+    li, h4 {
+        clear: both;
+        list-style: none;
+    }
+
+    input, button {
+        outline: none;
+    }
+
+    button {
+        background: none;
+        border: 0px;
+        // color: #888;
+        font-size: 13px;
+        width: 20%;
+        margin: 3px 0 0;
+        cursor: pointer;
+        padding-bottom: 5px 0px;
+    }
+
+    button:hover {
+        color: #333;
+    }
+
+    //Heading
+    h4,
+    label[for='new-task'] {
+        color: #333;
+        font-weight: 700;
+        font-size: 15px;
+        border-bottom: 2px solid #333;
+        padding: 0px 10px 0px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    p {
+        width: 170px;
+    }
+
+    input[type="text"] {
+        margin: 0;
+        font-size: 14px;
+        line-height: 15px;
+        height: 15px;
+        width: 65%;
+        padding: 5px;
+        // border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 10px;
+        color: #888;
+    }
+
+    input[type="text"]:focus {
+        color: #333;
+    }
+
+    //New task
+    label[for='new-task'] {
+        display: block;
+        margin: 0 0 10px;
+    }
+
+    #new-task {
+        float: left;
+
+    }
+
+    p > button:hover {
+        color: #0fc57c;
+    }
+
+    //Task list
+    li {
+        overflow: hidden;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+    }
+
+    li > input[type="checkbox"] {
+        margin: 0 10px;
+        position: relative;
+        top: 10px;
+    }
+
+    li > label {
+        font-size: 17px;
+        line-height: 20px;
+        padding: 5px 0 0 5px;
+    }
+
+    li > .delete:hover {
+        color: #cf2323;
+    }
+
+    //Completed
+    #completed-tasks label {
+        text-decoration: line-through;
+        color: rgb(87, 86, 86);
+    }
+
+    #completeHeader {
+        margin-top: 10px;
+    }
+}

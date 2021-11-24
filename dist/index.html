@@ -27,13 +27,13 @@
             <section class="tripInfo">
                 <form class="">
                     <div id="dates">
-                        <label for="startDate">Start date:</label>
-                        <input type="text" id="start">
-                        <label for="endDate">End date:</label>
-                        <input type="text" id="end">
+                        <label for="start">Start date:</label>
+                        <input type="text" class="inputs" id="start">
+                        <label for="end">End date:</label>
+                        <input type="text" class="inputs" id="end">
                     </div>
                     <div id="tripLocation">
-                        <input type="text" id="inputLocation" placeholder="Enter your destination">
+                        <input type="text" class="inputs" id="inputLocation" placeholder="Enter your destination">
                     </div>
                     <div id="addLocations">
                         <input type="button" class="btn" id="addLocationBtn" value="+ Add more destinations">
@@ -48,20 +48,98 @@
 
             <section class="extraInfo">
                 <div id="hotel">
-                    <input type="button" class="btn" id="hotelBtn" value="+ Add hotel">
-                    <div id="hotelInfo"></div>
+                    <button class="dropBtn" id="hotelBtn">+ Add hotel</button> 
+                    <div id="hotelInfo">
+                        <form id="hForm">
+                            <label for="hName">Hotel: </label>
+                            <input type="text" class="inputs" id="hName" placeholder="Hotel name">
+                            <label for="hAddress">Address: </label>
+                            <input type="text" class="inputs" id="hAddress" placeholder="Hotel address">
+                            <label for="checkIn">Check In:</label>
+                            <input type="date" class="inputs" id="hCheckInDate">
+                            <input type="time" class="inputs" id="hCheckInTime">
+                            <label for="checkOut">Check Out: </label>
+                            <input type="date" class="inputs" id="hCheckOutDate">
+                            <input type="time" class="inputs" id="hCheckOutTime">
+                            <label for="hExtraInfo">Add extra information</label>
+                            <textarea class="eInputs" id="hExtraInfo" placeholder="Add info..."></textarea>
+                            <input type="button" id="hSubmit" value="Submit">
+                        </form>
+                    </div>
                 </div>
                 <div id="flight">
-                    <input type="button" class="btn" id="flightBtn" value="+ Add flight">
-                    <div id="flightInfo"></div>
+                    <button class="dropBtn" id="flightBtn">+ Add flight</button>
+                    <div id="flightInfo">
+                        <form id="fForm">
+                            <h4>Outbound:</h4>
+                            <label for="outFlight">Flight:</label>
+                            <input type="text" class="inputs" id="outFlight" placeholder="E.g. Paris-London">
+                            <label for="outDepDate">Departure:</label>
+                            <input type="date" class="inputs" id="outDepDate">
+                            <input type="time" class="inputs" id="outDepTime">
+                            <label for="outArrDate">Arrival:</label>
+                            <input type="date" class="inputs" id="outArrDate">
+                            <input type="time" class="inputs" id="outArrTime">
+                            <h4>Inbound:</h4>
+                            <label for="inFlight"></label>
+                            <input type="text" class="inputs" id="inFlight" placeholder="E.g. London-Paris">
+                            <label for="inDepDate"></label>
+                            <input type="date" class="inputs" id="inDepDate">
+                            <input type="time" class="inputs" id="inDepTime">
+                            <label for="inArrDate">Arrival:</label>
+                            <input type="date" class="inputs" id="inArrDate">
+                            <input type="time" class="inputs" id="inArrTime">
+                            <label for="fExtraInfo">Add extra information</label>
+                            <input type="text" class="eInputs" id="fExtraInfo" placeholder="Add info..">
+                            <input type="button" id="fSubmit" value="Submit">
+                        </form>
+                    </div>
                 </div>
                 <div id="packing">
-                    <input type="button" class="btn" id="packingBtn" value="+ Make a packing list">
-                    <div id="packingList"></div>
+                    <button class="dropBtn" id="packingBtn">+ Make a packing list</button>
+                    
+                    <div id="packingList">
+                        <h3>Packing list</h3>
+                        <h4>Add Item</h4>
+                        <p>
+                            <input id="new-task" type="text"><button id="packAddBtn">Add</button>
+                        </p>
+
+                        <h4>To pack</h4>
+                        <ul id="incomplete-tasks">
+                            <li>
+                                <input type="checkbox">
+                                <label>Passport</label>
+                                <input type="text">
+                                <button class="edit">Edit</button>
+                                <button class="delete">X</button>
+                            </li>
+                            <li>
+                                <input type="checkbox">
+                                <label>Toothbrush</label>
+                                <input type="text" class="packLI">
+                                <button class="edit">Edit</button>
+                                <button class="delete">X</button>
+                            </li>
+                        </ul>
+
+                        <h4>Completed</h4>
+                        <ul id="completed-tasks">
+                        </ul>
+                    </div>
                 </div>
                 <div id="toDo">
-                    <input type="button" class="btn" id="toDoBtn" value="+ Make a To Do list">
-                    <div id="toDoList"></div>
+                    <button class="dropBtn" id="toDoBtn">+ Make a To Do list</button>
+                    <div id="toDoList">
+                        <div id="toDoHeader">
+                            <h4>To Do List</h4>
+                            <input type="text" id="toDoInput" class="listInput" placeholder="To do..">
+                            <span class="addBtn" id="toDoAddBtn">Add</span>
+                        </div>
+                        <ul id="toDoListUl">
+
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -77,6 +155,8 @@
                     <div id="forecast"></div>
                 </div>
                 <div id="countryData"></div>
+                <div id="flightData"></div>
+                <div id="hotelData"></div>
             </section>
 
             </div>
@@ -101,6 +181,7 @@
                 </div>
             </div>
         </footer>
+        <!-- <script src="../js/lists.js"></script> -->
         <script src="192213811e233d0b1ea0.js"></script>
         <script>
             var startDate,
@@ -149,7 +230,4 @@
         }
         </script>
     </body>
-    
-    <script>
-    </script>
 </html>
