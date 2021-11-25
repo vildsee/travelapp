@@ -30,16 +30,20 @@ module.exports = {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
+            // {
+            //     test: /\.(png|jpe?g|gif|ico)$/i,
+            //     use: [
+            //       {
+            //         loader: 'file-loader?name=[name].[ext]',
+            //         options: {
+            //             esModule: false,
+            //           },
+            //       },
+            //     ],
+            // },
             {
-                test: /\.(png|jpe?g|gif|ico)$/i,
-                use: [
-                  {
-                    loader: 'file-loader?name=[name].[ext]',
-                    options: {
-                        esModule: false,
-                      },
-                  },
-                ],
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.html$/i,

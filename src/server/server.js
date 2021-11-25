@@ -15,12 +15,6 @@ console.log(__dirname)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Setup Server
-const port = 6061;
-const server = app.listen(port, () => {
-    console.log(`running on localhost ${port}`);
-});
-
 
 //Post route
 app.post('/add', (req, res) => {
