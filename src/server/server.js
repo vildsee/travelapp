@@ -57,3 +57,5 @@ app.get('/all', (req, res) => {
     res.send(projectData);
     console.log(projectData, 'projectData posted');
 });
+
+module.exports = app;
