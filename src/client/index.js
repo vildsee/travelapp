@@ -9,7 +9,6 @@ import './styles/extraInfo.scss'
 import './js/app.js'
 import './js/countdown.js'
 import './js/lists.js'
-import './js/tests.js'
 
 //Functions, events
 import { performAction } from './js/app.js'
