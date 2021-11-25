@@ -1,5 +1,5 @@
 //Countdown
-countdown = () => {
+function countdown() {
     
     const day = new Date().getTime()
     const startDate = new Date(document.getElementById('start').value)
@@ -11,7 +11,7 @@ countdown = () => {
 };
 
 //Countdown conditions
-countdownConditions = () => {
+function countdownConditions () {
     const countHTML = document.getElementById('countdown')
 
     if(countdown() >= 1){
@@ -24,7 +24,7 @@ countdownConditions = () => {
 }
 
 //Countdown for weatherbit
-wCountdown = () => {
+function wCountdown (){
     if(countdown() <= 15){
         return countdown() + 1
     } else {
@@ -33,7 +33,7 @@ wCountdown = () => {
 }
 
 //Calculates trip length
-tripLength = () =>{
+function tripLength () {
     const lengthHTML = document.getElementById('length')
     const startDate = new Date(document.getElementById('start').value)
     const endDate = new Date(document.getElementById('end').value)
@@ -42,9 +42,10 @@ tripLength = () =>{
     var lengthDays = Math.floor(daysDifference / (1000 * 60 * 60 * 24));
 
     if (lengthDays >= 1) {
-        lengthHTML.innerHTML = `Your trip will be ${lengthDays +1} days long`
+        lengthHTML.innerHTML = `Your trip will be ${lengthDays +1} days long<hr>`
     } else if (lengthDays === 0) {
-        lengthHTML.innerHTML = `Your trip will be ${lengthDays +1} day long`
+        lengthHTML.innerHTML = `Your trip will be ${lengthDays +1} day long<hr>`
     }
 }
 
+export { countdown }

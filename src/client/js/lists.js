@@ -28,8 +28,6 @@ var createNewTaskElement = function(taskString) {
     var listItem = document.createElement('li')
     var checkBox = document.createElement('input')
     var label = document.createElement('label')
-    var editInput = document.createElement('input')
-    var editButton = document.createElement('button')
     var deleteButton = document.createElement('button')
 
     //Modifying the created elements
@@ -106,3 +104,36 @@ for(var i = 0; i < incompleteTasksHolder.children.length; i++) {
 for(var i = 0; i < completedTasksHolder.children.length; i++) {
     bindTaskEvents(completedTasksHolder.children[i], taskIncomplete)
 }
+
+//Post hotel data to displayData
+document.getElementById('hSubmit').addEventListener('click', function(event) {
+    const hotelData = document.getElementById('hotelData')
+    const name = document.getElementById('hName').value
+    const address = document.getElementById('hAddress').value
+    const inDate = document.getElementById('hCheckInDate').value
+    const inTime = document.getElementById('hCheckInTime').value
+    const outDate = document.getElementById('hCheckOutDate').value
+    const outTime = document.getElementById('hCheckOutTime').value
+    const extra = document.getElementById('hExtraInfo').value
+
+    hotelData.innerHTML = `You're staying in ${name} at ${address} <br>Check In: ${inDate} at ${inTime} <br>Check out: ${outDate} at ${outTime} <br>${extra}<hr>`
+})
+
+//Post flight data to displayData
+document.getElementById('fSubmit').addEventListener('click', function(event) {
+    const flightData = document.getElementById('flightData')
+    const outFlight = document.getElementById('outFlight').value
+    const outDepDate = document.getElementById('outDepDate').value
+    const outDepTime = document.getElementById('outDepTime').value
+    const arrDepDate = document.getElementById('outArrDate').value
+    const arrDepTime = document.getElementById('outArrTime').value
+    const inFlight = document.getElementById('inFlight').value
+    const inDepDate = document.getElementById('inDepDate').value
+    const inDepTime = document.getElementById('inDepTime').value
+    const inArrDate = document.getElementById('inArrDate').value
+    const inArrTime = document.getElementById('inArrTime').value
+    const extra = document.getElementById('fExtraInfo').value
+
+    flightData.innerHTML = `Your flight ${outFlight} departures on ${outDepDate} at ${outDepTime} and arrives in destination on ${arrDepDate} at ${arrDepTime}.<br>
+    Your flight ${inFlight} departures on ${inDepDate} at ${inDepTime} and arrives in destination on ${inArrDate} at ${inArrTime}.<br>${extra}<hr>`
+})

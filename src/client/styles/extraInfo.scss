@@ -5,7 +5,6 @@
     margin-right: 10px;
     padding: 15px;
     max-width: 100%;
-    font-family: 'Shadows Into Light', cursive;
     
     form{
         align-items: center;
@@ -14,10 +13,8 @@
     .inputs{
         width: 75%;
         justify-content: center;
-        padding: 7px 0px;
-    }
-
-    
+        padding: 5px 0px;
+    }    
 }
 
 .eInputs {
@@ -25,6 +22,7 @@
         padding-left: 7px;
         padding-bottom: 25px;
         cursor: text;
+        background: rgba(255, 252, 235, 0.7);
 }
 
 .listInput {
@@ -81,17 +79,12 @@
 
     button {
         background: none;
-        border: 0px;
-        // color: #888;
         font-size: 13px;
         width: 20%;
         margin: 3px 0 0;
         cursor: pointer;
         padding-bottom: 5px 0px;
-    }
-
-    button:hover {
-        color: #333;
+        border: none;
     }
 
     //Heading
@@ -116,9 +109,8 @@
         line-height: 15px;
         height: 15px;
         width: 65%;
-        padding: 5px;
-        // border: 1px solid #ddd;
-        background: #fff;
+        padding: 5px 5px 5px 7px;
+        background: rgba(255, 252, 235, 0.7);
         border-radius: 10px;
         color: #888;
     }
@@ -135,11 +127,11 @@
 
     #new-task {
         float: left;
-
     }
 
     p > button:hover {
         color: #0fc57c;
+        scale: 1.2;
     }
 
     //Task list
@@ -164,6 +156,7 @@
 
     li > .delete:hover {
         color: #cf2323;
+        scale: 1.4;
     }
 
     //Completed

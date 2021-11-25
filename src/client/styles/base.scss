@@ -8,7 +8,8 @@ body {
     background-color: #fffceb;
     max-width: 700px;
     margin: auto;
-    font-family: 'Yuji Boku', serif;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.1em;
     background: url('../media/background.jpeg') no-repeat;
     background-size: cover;
     height: 100%;
@@ -22,6 +23,7 @@ section {
 input, button {
     border: 1px solid grey;
     border-radius: 10px;
+    background: rgba(255, 252, 235, 0.8);
 }
 
 .infos {
@@ -34,17 +36,19 @@ input, button {
 .btn, .dropBtn {
     cursor: pointer;
     margin-top: 5px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 20px;
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.2em;
 }
 
 .inputs, .eInputs, .listInput {
     font-family: 'Poiret One', serif;
+    // font-weight: bold;
     font-size: 0.9em;
     border-radius: 15px;
+    color: #333;
 }
 
 .inputs {
@@ -53,7 +57,7 @@ input, button {
 }
 
 #start, #end {
-    padding: 10px 0px;
+    padding: 8px 0px;
     margin-bottom: 5px;
     font-size: 1em;
 }
@@ -70,6 +74,11 @@ input, button {
     border: 2px solid grey;
     border-radius: 10px;
     padding: 10px;
+
+    #date {
+        font-size: 22px;
+        padding-top: 7px;
+    }
 }
 
 .tripInfo {
@@ -81,16 +90,67 @@ input, button {
     border-radius: 10px;
     margin-top: 10px;
     
+    label {
+        font-size: 22px;
+    }
 }
 
 .displayData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
     padding: 10px;
     font-family: 'Amatic SC';
-    font-size: 1.5em;
+    font-size: 1.6em;
+    border: 2px solid grey;
+    border-radius: 10px;
+
+    hr {
+        justify-content: center;
+        max-width: 200px;
+    }
+    
+    #destination {
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #cityImage {
+        img{
+            border-radius: 10px;
+            border: 2px solid rgb(235, 235, 235);
+        }
+    }
+
+    #weatherIcon img {
+        width: 60px;
+        padding: 10px 5px 0 0;
+        margin: 0;
+    }
+
+    #weather {
+        hr {
+            margin-left: 0px;
+        }
+        h4 {
+            margin: 0;
+        }
+    }
+
+    #flightData, #hotelData {
+        text-align: center;
+    }
+
+    .divHead {
+        display: flex;
+    }
 }
 
 .oldTrips {
+    display: none;
     margin-top: 10px;
     padding: 10px;
 }
+

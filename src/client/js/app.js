@@ -171,25 +171,24 @@ const updateUI = async () => {
         countdownConditions()
 
         document.getElementById('destination').innerHTML = `${projectData.name}, ${projectData.countryName}`;
-        document.getElementById('cityImage').innerHTML = `<img src="${pic}" alt="img not found" width="200px"/>`;
+        document.getElementById('cityImage').innerHTML = `<img src="${pic}" alt="img not found" width="200px"/><hr>`;
         document.getElementById('duration').innerHTML = `${startDate.toDateString()}-${endDate.toDateString()}`;
-        document.getElementById('countryData').innerHTML = ``;
 
         if (countdown() <= 6){
                 wHeader.innerHTML = `Weather now:`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.todayIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML= `${projectData.description} ${projectData.temp}°C, wind speed is ${projectData.todayWind}m/s`;
+                forecast.innerHTML= `${projectData.description}<br>Temp is ${projectData.temp}°C, wind speed is ${projectData.todayWind}m/s<hr>`;
 
             } 
             else if (countdown() <= 15){
                 wHeader.innerHTML = `Weather on ${startDate.toDateString()}:`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.weekIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML = `Temperature will be between ${projectData.week_min_temp}°C and ${projectData.week_max_temp}°C, wind ${projectData.weekWind}m/s`;
+                forecast.innerHTML = `Temperature will be between ${projectData.week_min_temp}°C and ${projectData.week_max_temp}°C, wind ${projectData.weekWind}m/s<hr>`;
             } 
             else {
                 wHeader.innerHTML = `Weather on ${forecastDate.toDateString()}`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.futIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML = `Temperature will be between ${projectData.fut_min_temp}°C and ${projectData.fut_max_temp}°C, wind ${projectData.futWind}m/s`;
+                forecast.innerHTML = `Temperature will be between ${projectData.fut_min_temp}°C and ${projectData.fut_max_temp}°C, wind ${projectData.futWind}m/s<hr>`;
             }
         
             

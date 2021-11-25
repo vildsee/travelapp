@@ -19,7 +19,7 @@
 
             <section class="bar">
                 <div id="addTrip">
-                    <input type="button" class="btn" id="addTripBtn" value="+ Add trip">
+                    <input type="button" class="btn" id="addTripBtn" value="+ Save your trip">
                 </div>
                 <div id="date"></div>
             </section>
@@ -34,9 +34,6 @@
                     </div>
                     <div id="tripLocation">
                         <input type="text" class="inputs" id="inputLocation" placeholder="Enter your destination">
-                    </div>
-                    <div id="addLocations">
-                        <input type="button" class="btn" id="addLocationBtn" value="+ Add more destinations">
                     </div>
                     <div id="formsubmit">
                         <input type="submit" class="btn" id="submitTrip" value="Submit">
@@ -63,7 +60,7 @@
                             <input type="time" class="inputs" id="hCheckOutTime">
                             <label for="hExtraInfo">Add extra information</label>
                             <textarea class="eInputs" id="hExtraInfo" placeholder="Add info..."></textarea>
-                            <input type="button" id="hSubmit" value="Submit">
+                            <input type="button" class ="btn" id="hSubmit" value="Submit">
                         </form>
                     </div>
                 </div>
@@ -81,7 +78,7 @@
                             <input type="date" class="inputs" id="outArrDate">
                             <input type="time" class="inputs" id="outArrTime">
                             <h3>Inbound:</h3>
-                            <label for="inFlight"></label>
+                            <label for="inFlight">Flight:</label>
                             <input type="text" class="inputs" id="inFlight" placeholder="E.g. London-Paris">
                             <label for="inDepDate"></label>
                             <input type="date" class="inputs" id="inDepDate">
@@ -91,7 +88,7 @@
                             <input type="time" class="inputs" id="inArrTime">
                             <label for="fExtraInfo">Add extra information</label>
                             <input type="text" class="eInputs" id="fExtraInfo" placeholder="Add info..">
-                            <input type="button" id="fSubmit" value="Submit">
+                            <input type="button" class="btn" id="fSubmit" value="Submit">
                         </form>
                     </div>
                 </div>
@@ -127,15 +124,19 @@
             </section>
 
             <section class="displayData">
-                <div id="destination"></div>
-                <div id="cityImage"></div>
+                <div id="destinationImage">
+                    <div id="destination"></div>
+                    <div id="cityImage"></div>
+                </div>      
                 <div id="duration"></div>
                 <div id="countdown"></div>
                 <div id="length"></div>
                 <div id="weather">
                     <h4 id="wHeader"></h4>
-                    <div id="weatherIcon"></div>
-                    <div id="forecast"></div>
+                    <div class="divHead">
+                        <div id="weatherIcon"></div>
+                        <div id="forecast"></div>
+                    </div>
                 </div>
                 <div id="countryData"></div>
                 <div id="flightData"></div>
