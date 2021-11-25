@@ -29,8 +29,6 @@ app.post('/add', (req, res) => {
     projectData["lat"] = data.lat;
     projectData["lng"] = data.lng;
     projectData["countryName"] = data.countryName;
-    // projectData["startDate"] = data.startDate;
-    // projectData["endDate"] = data.endDate;
     projectData["name"] = data.name;
     projectData["citypic"] = data.citypic;
 
