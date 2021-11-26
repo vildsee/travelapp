@@ -4,14 +4,14 @@ const username = '&username=vildsee';
 
 /* Weatherbit API Variables */
 const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
-const weatherKey = '1a77645c2dca40088908444918bacbb7';
+const weatherKey = '&key=1a77645c2dca40088908444918bacbb7';
 
 /* Pixabay API Variables */
 const pixabayBaseUrl = 'https://pixabay.com/api/';
-const pixabayKey = '24291413-a1c99d0fb3b3a66d3cf315472';
+const pixabayKey = '?key=24291413-a1c99d0fb3b3a66d3cf315472';
 
 // Create a new date instance dynamically with JS
-const day = new Date();
+const day = new Date("03/25/2015");
 let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
 let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;
