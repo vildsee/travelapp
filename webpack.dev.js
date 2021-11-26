@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const Dotenv = require('dotenv-webpack')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
     entry: './src/client/index.js',
@@ -65,5 +66,6 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new Dotenv(),
+        new WorkboxPlugin.GenerateSW()
     ]
 }

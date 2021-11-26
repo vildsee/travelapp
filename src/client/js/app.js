@@ -17,8 +17,7 @@ let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;
 
 //Clock
-function startTime(e) {
-    e.preventDefault()
+function startTime() {
     const today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
@@ -32,7 +31,7 @@ function startTime(e) {
     if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
     return i;
   }
-window.addEventListener('load', startTime(e))
+window.addEventListener('load', startTime())
 
 //Global variables
 const wHeader = document.getElementById('wHeader')
