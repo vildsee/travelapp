@@ -1,4 +1,3 @@
-
 /* GeoNames API Variables */
 const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
 const username = '&username=vildsee';
@@ -14,11 +13,12 @@ const pixabayKey = `?key=${process.env.PIXABAY_API_KEY}`;
 // Create a new date instance dynamically with JS
 const day = new Date();
 let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
-
 let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;
+
 //Clock
-function startTime() {
+function startTime(e) {
+    e.preventDefault()
     const today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
@@ -29,13 +29,10 @@ function startTime() {
     setTimeout(startTime, 1000);
   }
   function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
     return i;
   }
-
-window.addEventListener('load', startTime())
-
-
+window.addEventListener('load', startTime(e))
 
 //Global variables
 const wHeader = document.getElementById('wHeader')
@@ -45,16 +42,15 @@ const forecast = document.getElementById('forecast')
 //Eventlistener for id=generate
 document.querySelector('#submitTrip').addEventListener('click', performAction);
 
-
 //Event
 function performAction(event) {
     event.preventDefault();
+
     const city = document.getElementById('inputLocation').value;
     const day = new Date().getTime()
     const startDate = new Date(document.getElementById('start').value)
 
     count = startDate - day
-    console.log(count)
 
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
@@ -185,7 +181,6 @@ const updateUI = async () => {
     const req = await fetch('http://localhost:6061/all');
     try {
         const projectData = await req.json();
-        // const displayData = document.getElementsByClassName('displayData')
         const pic = projectData.citypic;
 
         countdownConditions()
@@ -216,4 +211,3 @@ const updateUI = async () => {
         console.log('error UI', error);
     }
 };
-

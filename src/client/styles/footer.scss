@@ -1,10 +1,9 @@
 footer {
-
     #footsie {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    font-size: 0.75em;
+    font-size: 0.8em;
     }
 
     hr {
@@ -13,10 +12,36 @@ footer {
 
     a {
         text-decoration: none;
+        font-size: 16px;
+    }
+
+    a:hover {
+        scale: 1.2;
     }
 
     img {
         max-width: 50px;
     }
 
+    p {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-bottom: 5px;
+        margin: 0;
+
+    }
+
+    #usedAPI {
+        display: flex;
+    }
+
+    #geoWeath {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+    }
+
+    #copyright {
+        padding-right: 20px;
+    }
 }

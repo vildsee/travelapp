@@ -14,8 +14,6 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-//Make task lists
-
 //Packing list
 var taskInput = document.getElementById('new-task')
 var addButton = document.getElementById('packAddBtn')
