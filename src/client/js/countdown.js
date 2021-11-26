@@ -48,4 +48,3 @@ function tripLength () {
     }
 }
 
-export { countdown }

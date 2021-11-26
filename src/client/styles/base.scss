@@ -26,6 +26,14 @@ input, button {
     background: rgba(255, 252, 235, 0.8);
 }
 
+button:hover {
+    background: rgb(187, 240, 250, 0.8);
+}
+
+.btn:hover {
+    background: rgb(187, 240, 250, 0.8);
+}
+
 .infos {
     display: grid;
     grid-template-columns: auto 1fr;
