@@ -12,10 +12,30 @@ const pixabayBaseUrl = 'https://pixabay.com/api/';
 const pixabayKey = `?key=${process.env.PIXABAY_API_KEY}`;
 
 // Create a new date instance dynamically with JS
-let day = new Date();
+const day = new Date();
 let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
+
 let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;
+//Clock
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+    setTimeout(startTime, 1000);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+
+window.addEventListener('load', startTime())
+
+
 
 //Global variables
 const wHeader = document.getElementById('wHeader')

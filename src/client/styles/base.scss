@@ -83,9 +83,9 @@ button:hover {
     border-radius: 10px;
     padding: 10px;
 
-    #date {
-        font-size: 22px;
-        padding-top: 7px;
+    #date, #clock {
+        font-size: 26px;
+        padding: 2px 15px 0 15px;
     }
 }
 
