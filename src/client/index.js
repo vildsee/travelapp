@@ -3,6 +3,7 @@ import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/header.scss'
 import './styles/extraInfo.scss'
+import './styles/media.scss'
 
 //JavaScript
 import './js/app.js'

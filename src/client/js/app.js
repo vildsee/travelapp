@@ -11,7 +11,7 @@ const pixabayBaseUrl = 'https://pixabay.com/api/';
 const pixabayKey = '?key=24291413-a1c99d0fb3b3a66d3cf315472';
 
 // Create a new date instance dynamically with JS
-const day = new Date("03/25/2015");
+const day = new Date();
 let today = day.getDate() + '.' + (day.getMonth() +1) + '.' + day.getUTCFullYear();
 let forecastDate = new Date(day.setDate(day.getDate() + 15));
 document.getElementById('date').innerHTML = today;

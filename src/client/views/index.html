@@ -2,10 +2,10 @@
 <html lang="en_GB" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400;700&family=Poiret+One&family=Shadows+Into+Light&family=Yuji+Boku&display=swap" rel="stylesheet">
-
         <title>Around the World travel planner</title>
     </head>
 
@@ -25,10 +25,14 @@
             <section class="tripInfo">
                 <form class="">
                     <div id="dates">
-                        <label for="start">Start date:</label>
-                        <input type="text" class="inputs" id="start">
-                        <label for="end">End date:</label>
-                        <input type="text" class="inputs" id="end">
+                        <div id="startbox">
+                            <label for="st">Start date:</label>
+                            <input type="text" class="inputs" id="start">
+                        </div>
+                        <div id="endbox">
+                            <label for="end">End date:</label>
+                            <input type="text" class="inputs" id="end">
+                        </div> 
                     </div>
                     <div id="tripLocation">
                         <input type="text" class="inputs" id="inputLocation" placeholder="Enter your destination">

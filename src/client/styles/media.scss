@@ -1,0 +1,48 @@
+@media screen and (max-width: 480px) {
+    body {
+        scale: 0.8;
+    }
+
+    header {
+        margin-top: -150px;
+        text-align: center;
+    }
+
+    .infos {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto minmax(200px, auto);
+        grid-template-areas: 
+        "info"
+        "display";
+    }
+
+    #start, #end {
+        font-size: 0.9em;
+    }
+
+    #dates {
+        display: block;
+    }
+
+    .extraInfo {
+        margin-right: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dropBtn {
+        padding: 5px;
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        scale: 0.9;
+    }
+
+    header {
+        margin-top:-50px;
+    }
+}
