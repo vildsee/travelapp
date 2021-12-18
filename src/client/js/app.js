@@ -1,5 +1,5 @@
 /* GeoNames API Variables */
-const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
+const geoBaseUrl = 'https://secure.geonames.org/searchJSON?q=';
 const username = '&username=vildsee';
 
 /* Weatherbit API Variables */
@@ -37,6 +37,7 @@ window.addEventListener('load', startTime())
 const wHeader = document.getElementById('wHeader')
 const icon = document.getElementById('weatherIcon')
 const forecast = document.getElementById('forecast')
+const fHr = document.getElementById('fHr')
 
 //Eventlistener for id=generate
 document.querySelector('#submitTrip').addEventListener('click', performAction);
@@ -191,18 +192,21 @@ const updateUI = async () => {
         if (countdown() <= 6){
                 wHeader.innerHTML = `Weather now:`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.todayIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML= `${projectData.description}<br>Temp is ${projectData.temp}°C, wind speed is ${projectData.todayWind}m/s<hr>`;
+                forecast.innerHTML = `${projectData.description}<br>Temp is ${projectData.temp}°C, wind speed is ${projectData.todayWind}m/s`;
+                fHr.innerHTML = `<hr>`;
 
             } 
             else if (countdown() <= 15){
                 wHeader.innerHTML = `Weather on ${startDate.toDateString()}:`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.weekIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML = `Temperature will be between ${projectData.week_min_temp}°C and ${projectData.week_max_temp}°C, wind ${projectData.weekWind}m/s<hr>`;
+                forecast.innerHTML = `Temperature will be between ${projectData.week_min_temp}°C and ${projectData.week_max_temp}°C, wind ${projectData.weekWind}m/s`;
+                fHr.innerHTML = `<hr>`;
             } 
             else {
                 wHeader.innerHTML = `Weather on ${forecastDate.toDateString()}`;
                 icon.innerHTML = `<img src="https://www.weatherbit.io/static/img/icons/${projectData.futIcon}.png" alt="weather icon"/>`;
-                forecast.innerHTML = `Temperature will be between ${projectData.fut_min_temp}°C and ${projectData.fut_max_temp}°C, wind ${projectData.futWind}m/s<hr>`;
+                forecast.innerHTML = `Temperature will be between ${projectData.fut_min_temp}°C and ${projectData.fut_max_temp}°C, wind ${projectData.futWind}m/s`;
+                fHr.innerHTML = `<hr>`;
             }
         
             
