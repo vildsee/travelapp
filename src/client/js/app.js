@@ -1,14 +1,14 @@
 /* GeoNames API Variables */
 const geoBaseUrl = 'https://secure.geonames.org/searchJSON?q=';
-const username = '&username=vildsee';
+const username = `&username=${process.env.GEOBASE_USERNAME}`;
 
-/* Weatherbit API Variables */
-const weatherBaseUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?';
-const weatherKey = '&key=1a77645c2dca40088908444918bacbb7';
+/* OpenWeather API Variables */
+const weatherBaseUrl = 'https://api.openweathermap.org/data/2.5/forecast/daily?q=';
+const weatherKey = `&appid=${process.env.OPENWEATHER_API_KEY}`;
 
 /* Pixabay API Variables */
 const pixabayBaseUrl = 'https://pixabay.com/api/';
-const pixabayKey = '?key=24291413-a1c99d0fb3b3a66d3cf315472';
+const pixabayKey = `?key=${process.env.PIXABAY_API_KEY}`;
 
 // Create a new date instance dynamically with JS
 const day = new Date();
@@ -55,11 +55,10 @@ function performAction(event) {
     getCoordinates(geoBaseUrl, city, username)
     .then(async (geodata) => {
 
-        const lat = geodata.geonames[0].lat;
-        const lng = geodata.geonames[0].lng;
+        const country = geodata.geonames[0].countryName;
         const res = await
 
-        getWeather(weatherBaseUrl, lat, lng, weatherKey)
+        getWeather(weatherBaseUrl, city, country, weatherKey)
         .then(async (weatherData) => {
             const res = await
 
@@ -148,10 +147,10 @@ const getCoordinates = async(geoBaseUrl, city, username) => {
         console.log('error getCoordinates');
     }
 };
-
+//api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}
 //Request to Weatherbit
-const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
-    const res = await fetch(weatherBaseUrl + '&lat=' + lat + '&lon=' + lng + weatherKey)
+const getWeather = async (weatherBaseUrl, city, country, weatherKey) => {
+    const res = await fetch(weatherBaseUrl + city + '&cnt=' + country + weatherKey)
     console.log('url', res)
     try {
         const weatherData = await res.json();
