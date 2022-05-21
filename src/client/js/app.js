@@ -1,14 +1,16 @@
 /* GeoNames API Variables */
+
 const geoBaseUrl = "https://secure.geonames.org/searchJSON?q=";
-const username = "&username=vildsee";
+const username = `&username=${process.env.GEOBASE_USERNAME}`;
 
 /* Weatherbit API Variables */
 const weatherBaseUrl = "https://api.weatherbit.io/v2.0/forecast/daily?";
 const weatherKey = "&key=" + process.env.API_KEY_WEATHERBIT;
 
 /* Pixabay API Variables */
+
 const pixabayBaseUrl = "https://pixabay.com/api/";
-const pixabayKey = "?key=" + process.env.API_KEY_PIXABAY;
+const pixabayKey = `?key=${process.env.API_KEY_PIXABAY}`;
 
 // Create a new date instance dynamically with JS
 const day = new Date();
@@ -143,8 +145,9 @@ const getCoordinates = async (geoBaseUrl, city, username) => {
     console.log("error getCoordinates");
   }
 };
-
+//api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}
 //Request to Weatherbit
+
 const getWeather = async (weatherBaseUrl, lat, lng, weatherKey) => {
   const res = await fetch(
     weatherBaseUrl + "&lat=" + lat + "&lon=" + lng + weatherKey
