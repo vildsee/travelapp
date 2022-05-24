@@ -5,7 +5,7 @@ const username = `&username=${process.env.GEOBASE_USERNAME}`;
 
 /* Weatherbit API Variables */
 const weatherBaseUrl = "https://api.weatherbit.io/v2.0/forecast/daily?";
-const weatherKey = "&key=" + process.env.API_KEY_WEATHERBIT;
+const weatherKey = `&key=${process.env.API_KEY_WEATHERBIT}`;
 
 /* Pixabay API Variables */
 
